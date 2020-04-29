@@ -1,0 +1,133 @@
+<div *ngIf="embedded" class="bid-convergencia-heading-simulation">
+    <span
+        class="d-block h2 font-weright-bold t-padding-top-xxlarge t-padding-left-normal text-danger"
+        >BID CONVERGENCIA</span
+    >
+</div>
+<div class="container-fluid">
+    <div class="row t-padding-x-none">
+        <nav
+            *ngIf="embedded"
+            class="col-md-3 col-lg-2 d-none d-md-block sidebar min-vh-100 t-padding-top-xxsmall"
+        >
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            routerLink="/home"
+                            routerLinkActive="active"
+                        >
+                            <i class="fad fa-home"></i>&nbsp; Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <h6
+                    class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
+                >
+                    Pages
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            [routerLink]="['/upload-package']"
+                            routerLinkActive="active"
+                        >
+                            <i [ngClass]="['fas fa-file']"></i>&nbsp; Upload
+                            Package
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            [routerLink]="['/step3']"
+                            routerLinkActive="active"
+                        >
+                            <i [ngClass]="['fas fa-file']"></i>&nbsp; Step 3
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div
+            class="col-12 min-vh-100 p-0"
+            [ngClass]="{ 'col-md-9 col-lg-10': embedded }"
+        >
+            <div class="bid-body-embedded">
+                <header>
+                    <nav
+                        class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap t-padding-y-medium px-4 shadow"
+                    >
+                        <a class="navbar-brand col mr-0" routerLink="/home"
+                            >SG Preparation Process</a
+                        >
+                        <label class="t-margin-bottom-none"
+                            ><span class="text-white small">{{
+                                'PPR_LANGUAGECOMBO_LABEL' | translate
+                            }}</span
+                            ><kendo-dropdownlist
+                                [data]="languages$ | async"
+                                [textField]="'text'"
+                                [valueField]="'value'"
+                                [valuePrimitive]="true"
+                                [value]="langSelected"
+                                (selectionChange)="changeLanguage($event)"
+                            >
+                            </kendo-dropdownlist
+                        ></label>
+
+                        <label class="t-margin-bottom-none" *ngIf="isDemo">
+                            <span class="text-white small">Embedded: </span>
+                            <kendo-switch
+                                [(ngModel)]="embedded"
+                                (click)="switch()"
+                            ></kendo-switch>
+                        </label>
+                    </nav>
+                </header>
+                <kendo-drawer-container>
+                    <kendo-drawer
+                        [hidden]="!showTimeLine"
+                        #drawer
+                        [mode]="'push'"
+                        [(expanded)]="expanded"
+                        class="t-padding-top-outsize"
+                    >
+                        <ng-template kendoDrawerTemplate>
+                            <div class="px-3">Time Line</div>
+                        </ng-template>
+                    </kendo-drawer>
+                    <kendo-drawer-content
+                        [ngClass]="{ 'k-drawer-content--closed': !expanded }"
+                    >
+                        <main
+                            role="main"
+                            class="col px-4 t-padding-top-outsize bid-main-section"
+                        >
+                            <button
+                                *ngIf="showTimeLine"
+                                class="btn btn-secondary btn-drawer-toggler"
+                                (click)="drawer.toggle()"
+                                aria-label="toggle menu"
+                            >
+                                <i
+                                    class="far"
+                                    [ngClass]="{
+                                        'fa-chevron-left': expanded,
+                                        'fa-chevron-right': !expanded
+                                    }"
+                                ></i>
+                            </button>
+                            <router-outlet></router-outlet>
+                        </main>
+                    </kendo-drawer-content>
+                </kendo-drawer-container>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>

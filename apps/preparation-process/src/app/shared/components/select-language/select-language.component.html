@@ -1,0 +1,66 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="panelbar-wrapper">
+                <kendo-panelbar>
+                    <kendo-panelbar-item
+                        title="{{ 'PPR_SELECTLANGUAGE_TITLE' | translate }}"
+                        expanded="true"
+                    >
+                        <ng-template kendoPanelBarContent>
+                            <div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="mb-5">
+                                            {{
+                                                'PPR_SELECTLANGUAGE_BODY1'
+                                                    | translate
+                                            }}
+                                            <strong class="font-weight-bold">{{
+                                                'PPR_SELECTLANGUAGE_BODY2'
+                                                    | translate
+                                            }}</strong>
+                                        </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex my-3">
+                                            <kendo-buttongroup
+                                                selection="single"
+                                                class="mb-5"
+                                            >
+                                                <button
+                                                    kendoButton
+                                                    class="text-center t-margin-right-outsize"
+                                                    style="position: relative;"
+                                                    [toggleable]="true"
+                                                    [selected]="lang.selected"
+                                                    [disabled]="readonly"
+                                                    *ngFor="
+                                                        let lang of languageModelList
+                                                    "
+                                                    (selectedChange)="
+                                                        selectLanguage(
+                                                            $event,
+                                                            lang
+                                                        )
+                                                    "
+                                                >
+                                                    {{ lang.code }}
+                                                    <span
+                                                        class="text-body font-weight-normal"
+                                                        style="display: block; position: absolute; top: 3rem; left: 50%; transform: translateX(-50%);"
+                                                        >{{ lang.name }}</span
+                                                    >
+                                                </button>
+                                            </kendo-buttongroup>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </kendo-panelbar-item>
+                </kendo-panelbar>
+            </div>
+        </div>
+    </div>
+</section>

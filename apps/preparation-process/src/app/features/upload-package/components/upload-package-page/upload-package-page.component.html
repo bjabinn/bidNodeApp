@@ -1,0 +1,50 @@
+<div #container>
+    <bid-header
+        [title]="headerTitle"
+        [text]="headerText"
+        [link]="headerLink"
+    ></bid-header>
+    <bid-select-language
+        [selected]="selectedLanguage"
+        [languages]="languages"
+        [readonly]="readonly"
+        (langSelect)="selectedLanguage = $event"
+    ></bid-select-language>
+    <bid-document-viewer
+        [documentCollection]="temporalDocuments$"
+        [documentRestriction]="documentRestriction"
+        [formatDate]="documentFormatDate"
+        [limit]="documentLimit"
+        [readonly]="readonly"
+    ></bid-document-viewer>
+    <!-- COMPONENT FOOTER ACTIONS  -->
+    <footer class="bid-actions-footer">
+        <div class="bid-actions-footer__wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-end">
+                            <button
+                                class="btn btn-footer"
+                                (click)="opened = true"
+                                [disabled]="
+                                    !selectedLanguage.length ||
+                                    (temporalDocuments$ | async)?.length === 0
+                                "
+                            >
+                                {{ 'PPR_UPLOADPACKAGE_SUBMIT' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- COMPONENT FOOTER ACTIONS  -->
+<bid-modal-confirm
+    [opened]="opened"
+    [title]="modalTitle"
+    [confirm]="modalConfirm"
+    (closed)="onCloseConfirm($event)"
+></bid-modal-confirm>

@@ -1,0 +1,93 @@
+////
+/// Override kendo-notification component
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of kendo ui
+/// @name .k-notification
+/// @since version 1.0.0
+////
+.k-notification-group {
+    position: absolute;
+    transform: translate(-6px, 60px);
+    max-width: rem(516);
+    .#{$ns}app--embebbed & {
+        transform: translate(-6px, 180px);
+    }
+
+    .k-notification {
+        background-color: $gray-200;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        color: color('main');
+    }
+    .k-notification-container {
+        margin: rem(4) 0 0 auto;
+    }
+    .k-notification-content {
+        font-weight: $font-weight-bold;
+        font-size: rem(20);
+        min-width: rem(180);
+    }
+}
+
+.k-notification-wrap {
+    padding: rem(32) rem(40) rem(32) rem(64);
+
+    .k-icon:not(.k-i-close) {
+        position: absolute;
+        top: 50%;
+        left: rem(16);
+        font-size: rem(40);
+        transform: translateY(-50%);
+
+        &.k-i-error,
+        &.k-i-warning,
+        &.k-i-info,
+        &.k-i-success {
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+        }
+
+        &.k-i-success {
+            color: $success;
+            &:before {
+                content: "";
+            }
+        }
+
+        &.k-i-info {
+            color: $info;
+            &:before {
+                content: "";
+            }
+        }
+
+        &.k-i-warning {
+            color: $warning;
+            &:before {
+                content: "";
+            }
+        }
+
+        &.k-i-error {
+            color: $danger;
+            &:before {
+                content: "";
+            }
+        }
+    }
+
+    .k-i-close {
+        position: absolute;
+        top: rem(12);
+        right: rem(16);
+        font-size: rem(23);
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+}

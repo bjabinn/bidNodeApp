@@ -1,0 +1,22 @@
+////
+/// ACTIONS FOOTER element
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of repository
+/// @name .k-notification
+/// @since version 1.0.0
+////
+.#{$ns}actions-footer {
+    margin-top: rem(140);
+    &__wrapper {
+        background: rgba(255, 255, 255, 0.9);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        padding: rem(24) rem(32);
+        z-index: 5;
+    }
+}

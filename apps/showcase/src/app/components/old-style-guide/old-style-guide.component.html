@@ -1,0 +1,141 @@
+<section class="container-fluid">
+
+
+    <!--Header with stats and filter-->
+    <header>
+        <bid-headings></bid-headings>
+
+        <div class="row">
+            <div class="col-5">
+                <label class="mb-0" for="multiple-checkboxes">PMR Cycle:</label>
+                <select class="form-control" id="status">
+                    <option selected>Current Cycle - First Period Jan-Jun 2019</option>
+                    <option>Current Cycle - First Period Jan-Jun 2018</option>
+                </select>
+            </div>
+            <div class="col text-right">
+
+            </div>
+        </div>
+
+        <div class="row" id="stats">
+            <!--Stats-->
+
+            <div class="col-sm">
+                <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.1)">
+                    <div class="card-header" id="summary-header">Report generation status</div>
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item row">
+                            <div class="col-sm-2 chart text-center notabsolute summary-order">
+                                <div role="tooltip" style="font-size: 0.8rem; color: #444; margin-bottom: 4px;" data-toggle="tooltip" data-placement="top" title="Operations with PMR required & at least TL Completed">
+                                    <span style="font-size: 1rem; border-top-width: 0px;">Total operations</span>
+                                </div>
+                                <span style="font-size: 3rem; color: #444;float: center">687
+                                </span>
+                            </div>
+                            <div class="col-sm-2 chart text-left notabsolute summary-order">
+                                <img src="chart.png" class="img-fluid" alt="Responsive image" style="max-height: 100px;">
+                            </div>
+                            <div class="col-sm-2 chart text-left notabsolute summary-order">
+                                <div class="card heightCard" style="border-color:#eaeaea">
+                                    <h3 class="text-center m-0" style="color: #8FB4FF; font-size: 1rem;border-top-width: 0px;">
+                                        Pending generation</h3>
+                                    <p class="text-center m-0" style="font-size: 2.5rem; color: #444;">597
+                                    </p>
+                                    <p class="text-center" style="color: #3FA2F7;">1 Errors</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 chart text-center notabsolute arrow summary-order">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="100px" viewBox="0 0 24 24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path stroke="#C2C2C2" fill="#C2C2C2"
+                                        d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                                </svg>
+                            </div>
+
+                            <div class="col-sm-2 chart text-left notabsolute summary-order">
+                                <div class="card heightCard" style="border-color:#eaeaea">
+                                    <h3 class="text-center m-0" style="color: #FFC938; font-size: 1rem;border-top-width: 0px;">
+                                        Generated</h3>
+                                    <p class="text-center m-0" style="font-size: 2.5rem; color: #444;">80
+                                    </p>
+                                    <p class="text-center" style="color: #3FA2F7;">2 Errors</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 chart text-center notabsolute arrow summary-order">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="100px" viewBox="0 0 24 24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path stroke="#C2C2C2" fill="#C2C2C2"
+                                        d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                                </svg>
+                            </div>
+                            <div class="col-sm-2 chart text-left notabsolute summary-order">
+                                <div class="card heightCard" style="border-color:#eaeaea">
+                                    <h3 class="text-center m-0" style="color: #6FD094; font-size: 1rem;border-top-width: 0px;">
+                                        Disclosed <i class="fas fa-check-circle"></i></h3>
+                                    <p class="text-center m-0" style="font-size: 2.5rem; color: #444;">10
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <bid-operation-filters></bid-operation-filters>
+        <bid-operation-list></bid-operation-list>
+    </header>
+</section>
+
+<!--DL Styles-->
+<div class="col-lg-12">
+    <hr />
+    <bid-buttons></bid-buttons>
+    <hr />
+    <bid-forms></bid-forms>
+    <hr />
+    <hr />
+    <bid-tables></bid-tables>
+    <hr />
+    <bid-cards></bid-cards>
+    <hr />
+
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <div class="big_textarea">
+                <div class="head">
+                    <span class="title">Title Mandatory Input*</span>
+                    <a href="#expandedmodal" data-toggle="modal" class="maximize"><i class="fas fa-expand-alt"></i> Maximize</a>
+                    <a href="#" class="remove"><i class="far fa-trash-alt"></i> Remove</a>
+                </div>
+                <textarea placeholder="Placeholder text"></textarea>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="big_textarea optional_input">
+                <div class="head">
+                    <p class="title">Optional Input <span>(Optional)</span></p>
+                    <a class="add" href="#"><i class="fas fa-plus"></i> Add</a>
+                </div>
+                <textarea placeholder="Placeholder text"></textarea>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="col-lg-12 buttons-example">
+        <bid-modals></bid-modals>
+    </div>
+
+
+</div>
+

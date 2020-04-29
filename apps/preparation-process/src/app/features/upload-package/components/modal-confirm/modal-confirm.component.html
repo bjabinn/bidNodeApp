@@ -1,0 +1,28 @@
+<kendo-dialog
+    title="{{ title }}"
+    *ngIf="opened"
+    (close)="close(false)"
+    [minWidth]="250"
+    [width]="840"
+    [minHeight]="340"
+>
+    <p>
+        <strong class="font-weight-bold"
+            >Would you like to submit the document "Name of the document" to the
+            Division Chief for Validation?</strong
+        >
+    </p>
+    <p>
+        The Division Chief will be notified and as soon as the document is
+        Aproved or Rejected, you will recieve an email and Convergence
+        notification
+    </p>
+    <kendo-dialog-actions layout="normal">
+        <button kendoButton (click)="close(false)" class="btn btn-link">
+            Cancel
+        </button>
+        <button kendoButton (click)="close(true)" primary="true">
+            {{ confirm }}
+        </button>
+    </kendo-dialog-actions>
+</kendo-dialog>

@@ -1,0 +1,27 @@
+<kendo-dialog
+    title="{{ title }}"
+    *ngIf="opened"
+    (close)="close(false)"
+    [minWidth]="250"
+    [width]="840"
+    [minHeight]="340"
+>
+    <p>
+        <strong class="font-weight-bold"
+            >Would you like to submit the project file package "Name of the
+            document" to VPC Manager for validations?</strong
+        >
+    </p>
+    <p>
+        Once the package is submitted, manager could approve and distributor for
+        ERM or return for modifications to teams
+    </p>
+    <kendo-dialog-actions layout="normal">
+        <button kendoButton (click)="close(false)" class="btn btn-link">
+            Cancel
+        </button>
+        <button kendoButton (click)="close(true)" primary="true">
+            {{ confirm }}
+        </button>
+    </kendo-dialog-actions>
+</kendo-dialog>

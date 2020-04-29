@@ -1,0 +1,582 @@
+{
+    "version": 1,
+    "projects": {
+        "showcase": {
+            "projectType": "application",
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/showcase",
+            "sourceRoot": "apps/showcase/src",
+            "prefix": "bid",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/showcase",
+                        "index": "apps/showcase/src/index.html",
+                        "main": "apps/showcase/src/main.ts",
+                        "polyfills": "apps/showcase/src/polyfills.ts",
+                        "tsConfig": "apps/showcase/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "apps/showcase/src/favicon.ico",
+                            "apps/showcase/src/assets"
+                        ],
+                        "styles": [
+                            {
+                                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+                            },
+                            "./libs/bid-assets/src/lib/showcase-theme.scss",
+                            "./libs/bid-assets/src/lib/front-modules.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/showcase/src/environments/environment.ts",
+                                    "with": "apps/showcase/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "showcase:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "showcase:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "showcase:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/showcase/tsconfig.app.json",
+                            "apps/showcase/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!apps/showcase/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/showcase/jest.config.js",
+                        "tsConfig": "apps/showcase/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "apps/showcase/src/test-setup.ts",
+                        "styles": [
+                            {
+                                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "showcase-e2e": {
+            "root": "apps/showcase-e2e",
+            "sourceRoot": "apps/showcase-e2e/src",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/showcase-e2e/cypress.json",
+                        "tsConfig": "apps/showcase-e2e/tsconfig.e2e.json",
+                        "devServerTarget": "showcase:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "showcase:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["apps/showcase-e2e/tsconfig.e2e.json"],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/showcase-e2e/**"
+                        ]
+                    }
+                }
+            }
+        },
+        "bid-ui": {
+            "projectType": "library",
+            "root": "libs/bid-ui",
+            "sourceRoot": "libs/bid-ui/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-ui/tsconfig.lib.json",
+                            "libs/bid-ui/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/bid-ui/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-ui/jest.config.js",
+                        "tsConfig": "libs/bid-ui/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-ui/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "bid-security": {
+            "projectType": "library",
+            "root": "libs/bid-security",
+            "sourceRoot": "libs/bid-security/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-security/tsconfig.lib.json",
+                            "libs/bid-security/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/bid-security/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-security/jest.config.js",
+                        "tsConfig": "libs/bid-security/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-security/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "bid-translate": {
+            "projectType": "library",
+            "root": "libs/bid-translate",
+            "sourceRoot": "libs/bid-translate/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-translate/tsconfig.lib.json",
+                            "libs/bid-translate/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/bid-translate/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-translate/jest.config.js",
+                        "tsConfig": "libs/bid-translate/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-translate/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "bid-api-service": {
+            "projectType": "library",
+            "root": "libs/bid-api-service",
+            "sourceRoot": "libs/bid-api-service/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-api-service/tsconfig.lib.json",
+                            "libs/bid-api-service/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/bid-api-service/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-api-service/jest.config.js",
+                        "tsConfig": "libs/bid-api-service/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-api-service/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "bid-utils": {
+            "projectType": "library",
+            "root": "libs/bid-utils",
+            "sourceRoot": "libs/bid-utils/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-utils/tsconfig.lib.json",
+                            "libs/bid-utils/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/bid-utils/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-utils/jest.config.js",
+                        "tsConfig": "libs/bid-utils/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-utils/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "bid-assets": {
+            "root": "libs/bid-assets",
+            "sourceRoot": "libs/bid-assets/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-assets/tsconfig.lib.json",
+                            "libs/bid-assets/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/bid-assets/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-assets/jest.config.js",
+                        "tsConfig": "libs/bid-assets/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                }
+            }
+        },
+        "bid-handle-errors": {
+            "projectType": "library",
+            "root": "libs/bid-handle-errors",
+            "sourceRoot": "libs/bid-handle-errors/src",
+            "prefix": "bid",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/bid-handle-errors/tsconfig.lib.json",
+                            "libs/bid-handle-errors/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/bid-handle-errors/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/bid-handle-errors/jest.config.js",
+                        "tsConfig": "libs/bid-handle-errors/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/bid-handle-errors/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "preparation-process": {
+            "projectType": "application",
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/preparation-process",
+            "sourceRoot": "apps/preparation-process/src",
+            "prefix": "bid",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/preparation-process",
+                        "index": "apps/preparation-process/src/index.html",
+                        "main": "apps/preparation-process/src/main.ts",
+                        "polyfills": "apps/preparation-process/src/polyfills.ts",
+                        "tsConfig": "apps/preparation-process/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "apps/preparation-process/src/favicon.ico",
+                            "apps/preparation-process/src/assets"
+                        ],
+                        "styles": [
+                            {
+                                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+                            },
+                            "./libs/bid-assets/src/lib/showcase-theme.scss",
+                            "./libs/bid-assets/src/lib/front-modules.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/preparation-process/src/environments/environment.ts",
+                                    "with": "apps/preparation-process/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "preparation-process:build",
+                        "proxyConfig": "apps/preparation-process/proxy.conf.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "preparation-process:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "preparation-process:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/preparation-process/tsconfig.app.json",
+                            "apps/preparation-process/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/preparation-process/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/preparation-process/jest.config.js",
+                        "tsConfig": "apps/preparation-process/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "apps/preparation-process/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "preparation-process-e2e": {
+            "root": "apps/preparation-process-e2e",
+            "sourceRoot": "apps/preparation-process-e2e/src",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/preparation-process-e2e/cypress.json",
+                        "tsConfig": "apps/preparation-process-e2e/tsconfig.e2e.json",
+                        "devServerTarget": "preparation-process:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "preparation-process:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/preparation-process-e2e/tsconfig.e2e.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/preparation-process-e2e/**"
+                        ]
+                    }
+                }
+            }
+        },
+        "pocnest-middleware": {
+            "root": "apps/pocnest/middleware",
+            "sourceRoot": "apps/pocnest/middleware/src",
+            "projectType": "application",
+            "prefix": "pocnest-middleware",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/node:build",
+                    "options": {
+                        "outputPath": "dist/apps/pocnest/middleware",
+                        "main": "apps/pocnest/middleware/src/main.ts",
+                        "tsConfig": "apps/pocnest/middleware/tsconfig.app.json",
+                        "assets": ["apps/pocnest/middleware/src/assets"]
+                    },
+                    "configurations": {
+                        "production": {
+                            "optimization": true,
+                            "extractLicenses": true,
+                            "inspect": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/pocnest/middleware/src/environments/environment.ts",
+                                    "with": "apps/pocnest/middleware/src/environments/environment.prod.ts"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@nrwl/node:execute",
+                    "options": {
+                        "buildTarget": "pocnest-middleware:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/pocnest/middleware/tsconfig.app.json",
+                            "apps/pocnest/middleware/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/pocnest/middleware/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/pocnest/middleware/jest.config.js",
+                        "tsConfig": "apps/pocnest/middleware/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/angular",
+        "analytics": false
+    },
+    "schematics": {
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
+        }
+    },
+    "defaultProject": "showcase"
+}

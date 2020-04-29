@@ -1,0 +1,94 @@
+<ng-template #template let-anchor>
+    <span>{{ anchor.nativeElement.innerText }}</span>
+</ng-template>
+<div kendoTooltip
+    showOn="none"
+    [tooltipTemplate]="template"
+    (mouseover)="showTooltip($event)">
+<kendo-grid
+    [kendoGridBinding]="gridView"
+    [sortable]="true"
+    (remove)="removeHandler($event)"
+    class="k-grid--list"
+>
+    <ng-template kendoGridToolbarTemplate>
+        <div class="k-grid-toolbar__wrapper">
+            <span class="k-grid-toolbar__operation-label">{{'PPR_DISTRIBUTIONLIST_OPLABEL' | translate}}</span>
+            <span class="k-grid-toolbar__operation">{{'PPR-DISTRIBUTIONLIST_OPTYPE' | translate}}</span>
+        </div>
+        <div class="k-grid-toolbar__wrapper">
+            <div class="bid-textbox t-margin-right-xxxlarge">
+                <label for="searchMembers" class="hide-accessible">{{'PPR_DISTRIBUTIONLIST_LABEL1' | translate}}</label>
+                <input
+                    placeholder="{{'PPR_DISTRIBUTIONLIST_PLACEHOLDER1' | translate}}"
+                    kendoTextBox
+                    (input)="onFilter($event.target.value)"
+                    [style.width]="'261px'"
+                    id="searchMembers"
+                    class="k-textbox"
+                />
+                <span class="bid-textbox__icon"></span>
+            </div>
+            <button kendoGridPDFCommand class="btn-secondary k-button--pdf k-button--sm">
+                <i class="far fa-download bid-icon"></i>
+                <span>{{'PPR_DISTRIBUTIONLIST_BTNDOWNLOAD' | translate}}</span>
+            </button>
+        </div>
+    </ng-template>
+    <kendo-grid-column
+        field="role"
+        title="{{'PPR_DISTRIBUTIONLIST_THEADER1' | translate}}"
+    ></kendo-grid-column>
+    <kendo-grid-column field="name" title="{{'PPR_DISTRIBUTIONLIST_THEADER2' | translate}}"></kendo-grid-column>
+    <kendo-grid-column field="added" title="{{'PPR_DISTRIBUTIONLIST_THEADER3' | translate}}"></kendo-grid-column>
+    <kendo-grid-command-column title="{{'PPR_DISTRIBUTIONLIST_THEADER4' | translate}}" width="300">
+        <ng-template kendoGridCellTemplate>
+            <button kendoGridRemoveCommand look="flat" icon="delete">
+                {{'PPR_DISTRIBUTIONLIST_BTNDELETE' | translate}}
+            </button>
+        </ng-template>
+    </kendo-grid-command-column>
+    <kendo-grid-pdf
+        fileName="Demo.pdf"
+        [allPages]="true"
+        paperSize="A4"
+        [repeatHeaders]="true"
+        [landscape]="true"
+    >
+        <kendo-grid-pdf-margin
+            top="2cm"
+            left="1cm"
+            right="1cm"
+            bottom="2cm"
+        ></kendo-grid-pdf-margin>
+        <ng-template
+            kendoGridPDFTemplate
+            let-pageNum="pageNum"
+            let-totalPages="totalPages"
+        >
+            <div class="page-template">
+                <div class="header">
+                    <div style="float: right">
+                        Page {{ pageNum }} of {{ totalPages }}
+                    </div>
+                    Multi-page grid with automatic page breaking
+                </div>
+                <div class="footer">Page {{ pageNum }} of {{ totalPages }}</div>
+            </div>
+        </ng-template>
+    </kendo-grid-pdf>
+</kendo-grid>
+</div>
+
+<bid-edit-form
+    (save)="saveHandler($event)"
+    (cancel)="cancelHandler($event)"
+    [active]="active"
+>
+</bid-edit-form>
+
+<bid-modal-confirm
+    [opened]="deleteOpen"
+    [name]="deleteName"
+    (closed)="deleteOpen = false"
+></bid-modal-confirm>

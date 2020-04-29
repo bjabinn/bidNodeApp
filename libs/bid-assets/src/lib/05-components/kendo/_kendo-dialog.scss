@@ -1,0 +1,96 @@
+////
+/// Override kendo-dialog component
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of kendo ui
+/// @name .k-dialog
+/// @since version 1.0.0
+////
+.k-dialog {
+    border-radius: rem(12);
+
+    //TITLE BAR
+    .k-dialog-titlebar {
+        background-color: color('primary-darker');
+        border-top-left-radius: rem(8);
+        border-top-right-radius: rem(8);
+        padding: rem(16) rem(25);
+    }
+    .k-dialog-title {
+        line-height: rem(34);
+        font-size: rem(25);
+    }
+    .k-dialog-close {
+        padding: rem(1);
+    }
+    .k-icon {
+        font-size: rem(25);
+    }
+
+    //CONTENT
+    .k-dialog-content {
+        padding: rem(30) rem(32);
+
+        p,
+        span {
+            font-size: rem(18);
+        }
+        .bid-dialog__txt--small {
+            display: inline-block;
+            font-size: rem(14);
+        }
+        .bid-dialog__txt--italic {
+            font-style: italic;
+        }
+        .bid-dialog__txt--grey {
+            color: color('gray-500');
+        }
+        .bid-dialog__txt--primary-light {
+            color: color('primary-light');
+        }
+    }
+
+    //FOOTER KENDO-DIALOG-ACTIONS
+    .k-dialog-buttongroup {
+        border-top: none;
+        padding: rem(32);
+
+        .k-button {
+            font-size: rem(16);
+            border: none;
+
+            &.k-primary {
+                background-color: color('primary');
+                border-color: color('primary');
+                box-shadow: none;
+                background-image: none;
+            }
+        }
+    }
+
+    //FOOTER MODAL__FOOTER
+    .modal__footer {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-top: rem(44);
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .k-button {
+            font-size: rem(16);
+
+            &.k-primary {
+                background-color: color('primary');
+                border: none;
+                box-shadow: none;
+                background-image: none;
+            }
+        }
+    }
+}

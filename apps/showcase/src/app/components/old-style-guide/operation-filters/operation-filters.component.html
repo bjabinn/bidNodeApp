@@ -1,0 +1,100 @@
+<!--Filters-->
+<div class="container-fluid">
+    <div class="row margintop3" style="background-color:#f7f7f7">
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label class="mb-0" for="search">Search</label>
+                <input type="search" class="form-control" id="search" placeholder="Operation name, Operation number">
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label class="mb-0" for="status">Report Status</label>
+                <select class="form-control" id="status">
+                    <option selected>All Status</option>
+                    <option>Pending generation</option>
+                    <option>Generated</option>
+                    <option>Disclosed</option>
+                    <option>Error</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-2 pt-3 lineh6">
+            <button data-toggle="collapse" (click)="handleClick($event)" role="button" class="btn btn-link">
+                <span *ngIf="!isOpenMoreFliters">
+                    <i class="fas fa-caret-down"></i>&nbsp; View more filters
+                </span>
+                <span *ngIf="isOpenMoreFliters">
+                    <i class="fas fa-caret-up"></i>&nbsp; View less filters
+                </span>
+            </button>
+        </div>
+
+        <div id="morefilters" [ngClass]="'container-fluid ' + classMoreFliters">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div>
+                        <label class="mb-0" for="multiple-checkboxes">Country Department</label>
+                        <select class="form-control" id="countryd">
+                            <option selected>All departments</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="mb-0" for="optype">Operation type</label>
+                        <select class="form-control" id="optype">
+                            <option>All operations types</option>
+                            <option>X</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="mb-0" for="modality">Modality</label>
+                        <select class="form-control" id="modality">
+                            <option>All modalities</option>
+                            <option>X</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="mb-0" for="oos">Division</label>
+                        <select class="form-control" id="oos">
+                            <option>All divisions</option>
+                            <option>X</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="mb-0" for="pvs">PMR Validation Stage</label>
+                        <select class="form-control" id="pvs">
+                            <option>All validations stages</option>
+                            <option>X</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="mb-0" for="country">PMR Stage</label>
+                        <select class="form-control" id="pmrStage">
+                            <option>All PMR stages</option>
+                            <option>X</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12 mt-2 text-right">
+                    <button type="button" class="btn btn-outline-secondary btn-100">Reset filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

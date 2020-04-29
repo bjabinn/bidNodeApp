@@ -1,0 +1,110 @@
+////
+/// Override kendo-grid component
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of kendo ui
+/// @name .k-grid
+/// @since version 1.0.0
+////
+.k-grid {
+
+    &--list {
+        border: none;
+
+        .k-grid {
+            &-toolbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: transparent;
+                width: 100%;
+                &__wrapper {
+                    width: 100%;
+
+                    &>* {
+                        display: inline-block;
+                    }
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+                &__operation-label {
+                    font-size: rem(16);
+                    font-weight: bold;
+                    color: color('black');
+                    margin-right: rem(16);
+                }
+                &__operation {
+                    font-size: rem(12);
+                    letter-spacing: rem(2);
+                    font-weight: bold;
+                    color: color('purple');
+                    background-color: color('purple-light');
+                    padding: rem(4) rem(7);
+                    border-radius: rem(3);
+                }
+            }
+            &-header {
+                background-color: color('primary-darker');
+                color: color('white');
+                font-weight: bold;
+                .k-icon {
+                    &.k-i-sort-desc-sm, &.k-i-sort-asc-sm {
+                        color: color('white');
+                    }
+                }
+            }
+        }
+        tbody {
+            tr:hover {
+                background-color: color('primary-lighter');
+
+                .k-button {
+                    color: color('primary-light');
+                }
+            }
+        }
+        tr {
+            &.k-alt {
+                background-color: color('white');
+            }
+            th:first-child {
+                padding-left: rem(50);
+            }
+            td:first-child {
+                padding-left: rem(50);
+            }
+        }
+        td {
+            border-left: none;
+            border-bottom-width: rem(1);
+        }
+        .k-command-cell {
+            padding-top: rem(13);
+            padding-bottom: rem(13);
+        }
+        .k-button-icontext{
+            padding: rem(0);
+            &::before {
+                background-color: transparent;
+            }
+            &:hover {
+                color: color('black');
+            }
+            &:focus {
+                &::after {
+                    box-shadow: none;
+                }
+            }
+        }
+        .k-i-delete {
+            vertical-align: bottom;
+            &::before {
+                content: '\f2ed';
+                font-family: "Font Awesome 5 Pro";
+            }
+        }
+    }
+}
