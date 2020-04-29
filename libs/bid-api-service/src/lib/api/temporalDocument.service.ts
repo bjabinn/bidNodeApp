@@ -68,14 +68,4 @@ export class TemporalDocumentService {
     private fromFileToTemporalDocumentMapper(file: File): DocumentModel {
         return this.fileService.getFileToTemporalDocumentMapper(file);
     }
-
-    /*FOR Proof Of Concept*/
-    public getSampleMiddleware(id: number): Observable<any> {
-        return this.http.get(`http://localhost:3333/api/documents/${id}`);
-    }
-    public getSampleBackend(id: number): Observable<any> {
-        return this.http.get(
-            `http://virtserver.swaggerhub.com/lperezga/lpl1la/1.0.0/steps/${id}`
-        );
-    }
 }

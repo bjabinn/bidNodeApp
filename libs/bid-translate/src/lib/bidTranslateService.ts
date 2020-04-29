@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class BidTranslateService {
     private readonly SELECTLANG = 'selectLang';
 
@@ -34,7 +34,7 @@ export class BidTranslateService {
         });
     }
 
-    changeLanguage(lang: string): void {
+    public changeLanguage(lang: string): void {
         this.storageService.set(this.SELECTLANG, lang);
         /*if (!this.storageService.check(lang)) {
             this.loadLanguage(lang).subscribe(() => this.translate.use(lang));
@@ -42,16 +42,20 @@ export class BidTranslateService {
         this.translate.use(lang);
     }
 
-    onLangChange(): Observable<any> {
+    public onLangChange(): Observable<any> {
         return this.translate.onLangChange;
     }
 
-    getCurrentLang(): string {
+    public getCurrentLang(): string {
         return this.storageService.get(this.SELECTLANG);
     }
 
-    instant(key: string): string {
-        return this.translate.instant(key);
+    public instant(key: string, params?: any): string {
+        return this.translate.instant(key, params);
+    }
+
+    public get(key: string, params?: any): Observable<string> {
+        return this.translate.get(key, params);
     }
 
     private loadLanguage(lang: string): Observable<any> {

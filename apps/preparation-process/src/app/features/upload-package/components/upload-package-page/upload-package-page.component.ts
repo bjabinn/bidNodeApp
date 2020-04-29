@@ -15,28 +15,34 @@ import { FileRestrictions } from '@progress/kendo-angular-upload';
 import {
     TemporalDocumentService,
     FilesService,
-    BlobSharedViewStateService
+    BlobSharedViewStateService,
+    Step,
+    Meeting
 } from '@bid/bid-api-service';
 import { NotificationGlobalService } from '@bid/bid-handle-errors';
-import { AppStepsStepIdService } from '@bid/bid-api-service';
-import { StateProcessService } from '@bid/bid-api-service';
+import { ApiProperty } from '@nestjs/swagger';
+import {
+    UserService,
+    StateProcessService,
+    AppStepsStepIdService
+} from '@bid/bid-api-service';
 
 //Models
 import { DocumentModel } from '@bid/bid-api-service';
 import { DocumentsPackage } from '@bid/bid-api-service';
+
 import { Document } from '@bid/bid-api-service';
-import { Step } from '@bid/bid-api-service';
-import { StepResponse } from '@bid/bid-api-service';
 
 //Enum
 import { Type } from '@bid/bid-api-service';
 import { StepStatus } from '@bid/bid-api-service';
+import { Role } from '@bid/pp/app/core/enums/role.enum';
 
 //Mapers
-import { DocumentsPackageMapper } from '@bid/bid-api-service';
 import { DocumentsPackageType } from '@bid/bid-api-service';
-import { StepMapper } from '@bid/bid-api-service';
-
+import { MeetingMapper } from '@bid/bid-api-service';
+import { PhaseHistory } from 'libs/bid-api-service/src/lib/models/phaseHistories.model';
+import * as lodash from 'lodash';
 @Component({
     selector: 'bid-upload-package-page',
     templateUrl: './upload-package-page.component.html'
@@ -44,11 +50,6 @@ import { StepMapper } from '@bid/bid-api-service';
 export class UploadPackagePageComponent implements OnInit, OnDestroy {
     @ViewChild('container') container: ElementRef;
     public footerWidth: string;
-    public headerTitle: string;
-    public headerText: string;
-    public headerLink: string;
-    public modalTitle: string;
-    public modalConfirm: string;
     public documentCollection: DocumentModel[];
     public documentLimit: number;
     public documentRestriction: FileRestrictions;
@@ -56,7 +57,11 @@ export class UploadPackagePageComponent implements OnInit, OnDestroy {
     public selectedLanguage: string;
     public languages: string[];
     public opened: boolean;
+    public openDeleteModal = false;
     public readonly: boolean;
+    public deletePermission = false;
+    public active = false;
+    public phaseData: any[] = [];
 
     public temporalDocuments$ = this.temporalDocService
         .temporalDocumentCollection$;
@@ -67,29 +72,131 @@ export class UploadPackagePageComponent implements OnInit, OnDestroy {
 
     constructor(
         private blobState: BlobSharedViewStateService,
+        private userSvc: UserService,
         private temporalDocService: TemporalDocumentService,
         private stepsService: AppStepsStepIdService,
         private stateProcessService: StateProcessService,
         private filesService: FilesService,
         private router: Router,
         private ngs: NotificationGlobalService
-    ) {
-        this.headerTitle = 'Upload PP Package';
-        this.headerText =
-            'The Project Team members must upload the Project Profile document in PDF format. Once this document has been uploaded, it should be submitted for validation.';
-        this.headerLink = '#';
-        this.blobState.getContainerItems(environment.azureContainer);
-        this.modalTitle = 'Submit Document to Division Chief for Validation';
-        this.modalConfirm = 'Submit for Validation';
+    ) {}
+
+    ngOnInit(): void {
+        const userdata = this.userSvc.getUser();
+        this.initBlob();
+        this.initLanguagesConfig();
+        this.initDocumentsConfig();
+        this.initFileServiceConfig();
+        this.getStepInfo('c5e0d01b-4990-4ad7-98ca-c338eda37a2e');
+        if (userdata.role && userdata.role.value === Role.Administrador) {
+            this.deletePermission = true;
+        }
+    }
+
+    private getStepInfo(id: string): void {
+        this.suscriptionsCollection.push(
+            this.stepsService.getStep(id).subscribe((data: Step) => {
+                this.documentsPackage = Object.assign(data.documentsPackage);
+                this.ifAvailableDocuments(this.documentsPackage);
+                this.ifAvailableMeetings(data.meeting);
+                this.ifAvailablePhaseHistory(data.phaseHistories);
+                this.stateProcessService.currentIdStep = data.step.id;
+                this.stateProcessService.currentIdCode = data.step.code;
+                this.readonly = data.step.status !== StepStatus.InProgress;
+            })
+        );
+    }
+
+    private ifAvailableDocuments(documentsPackage: DocumentsPackage): void {
+        if (!lodash.isEmpty(documentsPackage.documents)) {
+            this.temporalDocService.temporalMapper(
+                this.documentsPackage.documents
+            );
+            this.selectedLanguage = documentsPackage.documents[0].language;
+        }
+    }
+
+    private ifAvailableMeetings(meetingCollection: Meeting[]): void {
+        if (!lodash.isEmpty(meetingCollection)) {
+            this.stateProcessService.currentMeeting = MeetingMapper.mapToModel(
+                meetingCollection
+            )[0];
+        }
+    }
+    private ifAvailablePhaseHistory(phaseHistoryCollection: PhaseHistory[]) {
+        if (!lodash.isEmpty(phaseHistoryCollection)) {
+            this.phaseData = [...phaseHistoryCollection];
+        }
+    }
+
+    onCloseConfirm(submit: boolean) {
         this.opened = false;
+        if (submit) {
+            this.addTemporalDocumentToCollection();
+            this.goToNextStep();
+        }
+    }
+
+    private goToNextStep() {
+        const response = new Step();
+        response.command = 'SubmitToDivisionChief';
+        response.documentsPackage = this.documentsPackage;
+        this.suscriptionsCollection.push(
+            this.stepsService
+                .nextMove(this.stateProcessService.currentIdStep, response)
+                .subscribe(() => {
+                    this.router.navigate(['/vpc-manager']);
+                    this.ngs.showSuccess(
+                        'Document submited to Validation Chief with success',
+                        1000
+                    );
+                })
+        );
+    }
+
+    private addTemporalDocumentToCollection() {
+        this.temporalDocuments$.subscribe(
+            (temporalDocuments: DocumentModel[]) => {
+                const documents: Document[] = [];
+                const datePipe = new DatePipe('en-US');
+                temporalDocuments.forEach((doc: DocumentModel) => {
+                    const document: Document = {
+                        language: this.selectedLanguage,
+                        blobId: doc.tempUuid,
+                        extension: doc.name.split('.').pop(),
+                        type: Type.MainDocument,
+                        version: doc.version,
+                        created: datePipe.transform(
+                            doc.uploadedOn,
+                            environment.stepsConf.uploadPackage.dateFormat
+                        ),
+                        createdBy: doc.user.name
+                    };
+                    documents.push(document);
+                });
+                this.documentsPackage.type = DocumentsPackageType.PP;
+                this.documentsPackage.documents = documents;
+            }
+        );
+    }
+    private initBlob(): void {
+        this.blobState.getContainerItems(environment.azureContainer);
+    }
+
+    private initLanguagesConfig() {
         this.selectedLanguage = '';
         this.languages = environment.stepsConf.uploadPackage.languages;
+    }
+
+    private initDocumentsConfig(): void {
         this.documentLimit = environment.stepsConf.uploadPackage.documentLimit;
         this.documentRestriction =
             environment.stepsConf.uploadPackage.documentRestriction;
         this.documentFormatDate =
             environment.stepsConf.uploadPackage.dateFormat;
+    }
 
+    private initFileServiceConfig(): void {
         this.filesService.documentType =
             environment.stepsConf.uploadPackage.documentType;
         this.filesService.documentVersion =
@@ -97,86 +204,21 @@ export class UploadPackagePageComponent implements OnInit, OnDestroy {
         this.filesService.dateFormat =
             environment.stepsConf.uploadPackage.dateFormat;
     }
-    calcWidth(): string {
-        return `calc(${
-            this.container
-                ? this.container.nativeElement.offsetWidth + 'px'
-                : '100%'
-        } + (3rem - 2px))`;
-    }
 
-    ngOnInit(): void {
-        this.getStepInfo('c5e0d01b-4990-4ad7-98ca-c338eda37a2e');
-    }
-
-    getStepInfo(id: string): void {
-        this.suscriptionsCollection.push(
-            this.stepsService.getStepsStepId(id).subscribe((data: Step) => {
-                this.documentsPackage = Object.assign(data.documentsPackage);
-                if (this.documentsPackage.documents.length > 0) {
-                    this.temporalDocService.temporalMapper(
-                        this.documentsPackage.documents
-                    );
-                    this.selectedLanguage = this.documentsPackage.documents.pop().language;
-                }
-                this.stateProcessService.currentIdStep = data.step.id;
-                this.readonly = data.step.status !== StepStatus.InProgress;
-            })
-        );
-    }
-
-    onCloseConfirm(submit: boolean) {
-        this.opened = false;
-        if (submit) {
-            this.temporalDocuments$.subscribe(
-                (temporalDocuments: DocumentModel[]) => {
-                    const documents: Document[] = [];
-                    const datePipe = new DatePipe('en-US');
-                    temporalDocuments.forEach(doc => {
-                        const document: Document = {
-                            language: this.selectedLanguage,
-                            blobId: doc.tempUuid,
-                            extension: doc.name.split('.').pop(),
-                            type: Type.MainDocument,
-                            version: doc.version,
-                            created: datePipe.transform(
-                                doc.uploadedOn,
-                                environment.stepsConf.uploadPackage.dateFormat
-                            ),
-                            createdBy: doc.user.name
-                        };
-                        documents.push(document);
-                    });
-                    this.documentsPackage.type = DocumentsPackageType.PP;
-                    this.documentsPackage.documents = documents;
-                }
-            );
-
-            const response = new Step();
-            response.command = 'SubmitToDivisionChief';
-            response.documentsPackage = this.documentsPackage;
-            this.suscriptionsCollection.push(
-                this.stepsService
-                    .postStepsStepId(
-                        this.stateProcessService.currentIdStep,
-                        response
-                    )
-                    .subscribe(() => {
-                        this.router.navigate(['/vpc-manager']);
-                        this.ngs.showSuccess(
-                            'Document submited to Validation Chief with success',
-                            1000
-                        );
-                    })
-            );
-        }
-    }
-
-    unsubscribeAll() {
+    private unsubscribeAll(): void {
         this.suscriptionsCollection.forEach((sub: Subscription) =>
             sub.unsubscribe()
         );
     }
+
+    deleteTemplate(event: Event) {
+        if (event) {
+            this.userSvc.logOut();
+        } else {
+            this.openDeleteModal = false;
+        }
+    }
+
     ngOnDestroy() {
         this.unsubscribeAll();
     }

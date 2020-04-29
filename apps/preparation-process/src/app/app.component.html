@@ -95,10 +95,326 @@
                         #drawer
                         [mode]="'push'"
                         [(expanded)]="expanded"
+                        [width]=350
+                        [mini]="true"
+                        [miniWidth]=98
                         class="t-padding-top-outsize"
                     >
                         <ng-template kendoDrawerTemplate>
-                            <div class="px-3">Time Line</div>
+                            <nav class="bid-timeline">
+                                <div class="bid-timeline__mini" *ngIf="!expanded">
+                                    <header class="bid-timeline__mini-header">
+                                        <i class="fas fa-history bid-timeline__mini-icon"></i>
+                                    </header>
+                                    <div class="bid-timeline__mini-content">
+                                        <kendo-panelbar>
+                                            <kendo-panelbar-item title="" class="bid-timeline__mini-panelbar-item bid-timeline__mini-panelbar-item--active">
+                                                <ng-template kendoPanelBarItemTitle>
+                                                    <span class="bid-timeline__mini-title">PP</span>
+                                                </ng-template>
+                                                <ng-template kendoPanelBarContent>
+                                                    <ul class="bid-timeline__panelbar-content">
+                                                        <li class="bid-timeline__step-item bid-timeline__step-item--completed">
+                                                            <a href="#" class="bid-timeline__step-link">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bid-timeline__step-item bid-timeline__step-item--progress bid-timeline__step-item--active">
+                                                            <a href="#" class="bid-timeline__step-link">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bid-timeline__step-item bid-timeline__step-item--returned">
+                                                            <a href="#" class="bid-timeline__step-link">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bid-timeline__step-item bid-timeline__step-item--non-started">
+                                                            <a href="#" class="bid-timeline__step-link">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bid-timeline__step-item bid-timeline__step-item--completed">
+                                                            <a href="#" class="bid-timeline__step-link">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </ng-template>
+                                            </kendo-panelbar-item>
+                                            <kendo-panelbar-item title="" class="bid-timeline__mini-panelbar-item" [disabled]="true">
+                                                <ng-template kendoPanelBarItemTitle>
+                                                    <span class="bid-timeline__mini-title">POD</span>
+                                                </ng-template>
+                                                <ng-template kendoPanelBarContent>
+
+                                                </ng-template>
+                                            </kendo-panelbar-item>
+                                            <kendo-panelbar-item title="" class="bid-timeline__mini-panelbar-item" [disabled]="true">
+                                                <ng-template kendoPanelBarItemTitle>
+                                                    <span class="bid-timeline__mini-title">DLP</span>
+                                                </ng-template>
+                                                <ng-template kendoPanelBarContent>
+
+                                                </ng-template>
+                                            </kendo-panelbar-item>
+                                            <kendo-panelbar-item title="" class="bid-timeline__mini-panelbar-item" [disabled]="true">
+                                                <ng-template kendoPanelBarItemTitle>
+                                                    <span class="bid-timeline__mini-title">LP</span>
+                                                </ng-template>
+                                                <ng-template kendoPanelBarContent>
+
+                                                </ng-template>
+                                            </kendo-panelbar-item>
+                                        </kendo-panelbar>
+                                    </div>
+
+                                </div>
+                                <header class="bid-timeline__header" *ngIf="expanded">
+                                    <i class="fas fa-history bid-timeline__header-icon"></i>
+                                    <span class="bid-timeline__header-title">{{'PPR_TIMELINE_TITLE' | translate}}</span>
+                                </header>
+                                <div class="bid-timeline__panelbar-wrapper" *ngIf="expanded">
+                                    <kendo-panelbar class="bid-timeline__panelbar">
+                                        <kendo-panelbar-item title="" class="bid-timeline__panelbar-item bid-timeline__panelbar-item--active">
+                                        <!-- <kendo-panelbar-item title="" class="bid-timeline__panelbar-item"> -->
+                                            <ng-template kendoPanelBarItemTitle>
+                                                <span class="bid-timeline__panelbar-title">Project Profile Preparation (PP)</span>
+                                                <span class="bid-timeline__panelbar-subtitle">Started</span>
+                                            </ng-template>
+                                            <ng-template kendoPanelBarContent>
+                                                <ul class="bid-timeline__panelbar-content">
+                                                    <li class="bid-timeline__item bid-timeline__item--withdrawn">
+                                                        <kendo-panelbar class="bid-timeline__withdrawn">
+                                                            <kendo-panelbar-item title="" class="bid-timeline__withdrawn-item">
+                                                                <ng-template kendoPanelBarItemTitle>
+                                                                    <span class="bid-timeline__withdrawn-title">1st PP Package Withdrawn</span>
+                                                                    <span class="bid-timeline__withdrawn-subtitle">Withdrawn 24 Feb 2020</span>
+                                                                </ng-template>
+                                                                <ng-template kendoPanelBarContent>
+                                                                    <ul class="bid-timeline__step-list">
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </ng-template>
+                                                            </kendo-panelbar-item>
+                                                            <kendo-panelbar-item title="" class="bid-timeline__withdrawn-item">
+                                                                <ng-template kendoPanelBarItemTitle>
+                                                                    <span class="bid-timeline__withdrawn-title">2nd PP Package Withdrawn</span>
+                                                                    <span class="bid-timeline__withdrawn-subtitle">Withdrawn 24 Feb 2020</span>
+                                                                </ng-template>
+                                                                <ng-template kendoPanelBarContent>
+                                                                    <ul class="bid-timeline__step-list">
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="bid-timeline__step-item bid-timeline__step-item--withdrawn">
+                                                                            <a href="#" class="bid-timeline__step-link">
+                                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                                <div class="bid-timeline__step-content">
+                                                                                    <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                    <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </ng-template>
+                                                            </kendo-panelbar-item>
+                                                        </kendo-panelbar>
+                                                    </li>
+                                                    <li class="bid-timeline__item">
+                                                        <ul class="bid-timeline__step-list">
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--completed">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--progress bid-timeline__step-item--active">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--returned">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--non-started">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--non-started">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--progress">
+                                                                <span class="bid-timeline__step-item-icon"></span>
+                                                                <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                <ul class="bid-timeline__step-content">
+                                                                    <li class="bid-timeline__step-item bid-timeline__step-item--completed bid-timeline__step-item--active">
+                                                                        <a href="#" class="bid-timeline__step-link">
+                                                                            <span class="bid-timeline__step-item-icon"></span>
+                                                                            <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                            <div class="bid-timeline__step-content">
+                                                                                <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="bid-timeline__step-item bid-timeline__step-item--progress">
+                                                                        <a href="#" class="bid-timeline__step-link">
+                                                                            <span class="bid-timeline__step-item-icon"></span>
+                                                                            <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                            <div class="bid-timeline__step-content">
+                                                                                <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="bid-timeline__step-item bid-timeline__step-item--non-started">
+                                                                        <a href="#" class="bid-timeline__step-link">
+                                                                            <span class="bid-timeline__step-item-icon"></span>
+                                                                            <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                            <div class="bid-timeline__step-content">
+                                                                                <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                                <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="bid-timeline__step-item bid-timeline__step-item--returned">
+                                                                <a href="#" class="bid-timeline__step-link">
+                                                                    <span class="bid-timeline__step-item-icon"></span>
+                                                                    <span class="bid-timeline__step-title">Select PP Language</span>
+                                                                    <div class="bid-timeline__step-content">
+                                                                        <span class="bid-timeline__step-info">by TL / ATL / OA / PA</span>
+                                                                        <span class="bid-timeline__step-info">Completed on Jan14 2020</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </ng-template>
+                                        </kendo-panelbar-item>
+                                        <kendo-panelbar-item title="" class="bid-timeline__panelbar-item" [disabled]="true">
+                                            <ng-template kendoPanelBarItemTitle>
+                                                <span class="bid-timeline__panelbar-title">POD Preparation Process</span>
+                                                <span class="bid-timeline__panelbar-subtitle">Not Started</span>
+                                            </ng-template>
+                                            <ng-template kendoPanelBarContent></ng-template>
+                                        </kendo-panelbar-item>
+                                        <kendo-panelbar-item title="" class="bid-timeline__panelbar-item" [disabled]="true">
+                                            <ng-template kendoPanelBarItemTitle>
+                                                <span class="bid-timeline__panelbar-title">DLP Preparation Process</span>
+                                                <span class="bid-timeline__panelbar-subtitle">Not Started</span>
+                                            </ng-template>
+                                            <ng-template kendoPanelBarContent></ng-template>
+                                        </kendo-panelbar-item>
+                                        <kendo-panelbar-item title="" class="bid-timeline__panelbar-item" [disabled]="true">
+                                            <ng-template kendoPanelBarItemTitle>
+                                                <span class="bid-timeline__panelbar-title">LP Preparation Process</span>
+                                                <span class="bid-timeline__panelbar-subtitle">Not Started</span>
+                                            </ng-template>
+                                            <ng-template kendoPanelBarContent></ng-template>
+                                        </kendo-panelbar-item>
+                                    </kendo-panelbar>
+                                </div>
+                            </nav>
                         </ng-template>
                     </kendo-drawer>
                     <kendo-drawer-content

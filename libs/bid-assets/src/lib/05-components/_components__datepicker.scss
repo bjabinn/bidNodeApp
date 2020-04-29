@@ -3,34 +3,65 @@
 ///
 /// @access public
 /// @author Dfront Specialist Team
-/// @group btn
+/// @group Component
 /// @name .#{$ns}datepicker
 /// @since version 1.0.0
 ////
 .#{$ns}datepicker {
-    // display: block;
-    // width: 100%;
-    display: inline-block;
-    margin-right: rem(32);
 
-    .k-input {
-        &::selection {
-            // background-color: color('primary');
-            // background-color: Window;
+    margin-bottom: rem(24);
+    display: flex;
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        display: block;
+        color: color('black');
+        margin-bottom: rem(8);
+    }
+
+    &__input {
+        // display: block;
+        // width: 100%;
+        display: inline-block;
+        // margin-right: rem(32);
+        padding-bottom: rem(20);
+        width: rem(216);
+
+        &--warning {
+            &.k-datepicker {
+                .k-picker-wrap {
+                    border-color: color('danger');
+                    &:hover {
+                        border-color: color('danger');
+                    }
+                }
+            }
         }
     }
 
-    &__label {
-        display: inline-block;
-        width: calc(50% - 40px);
-        margin-right: rem(40);
+    &__hint {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: rem(12);
+        font-style: italic;
+        color: color('danger');
     }
-    &__label-txt {
-        color: color('gray-800');
-        font-size: rem(14);
-        display: block;
-        margin-bottom: rem(8);
-    }
+
+    // &__label {
+    //     display: inline-block;
+    //     width: calc(50% - 40px);
+    //     margin-right: rem(40);
+    // }
+    // &__label-txt {
+    //     color: color('gray-800');
+    //     font-size: rem(14);
+    //     display: block;
+    //     margin-bottom: rem(8);
+    // }
     .k-dateinput-wrap {
         border-radius: rem(5);
         position: relative;

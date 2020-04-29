@@ -1,8 +1,8 @@
 <div #container>
     <bid-header
-        [title]="headerTitle"
-        [text]="headerText"
-        [link]="headerLink"
+        [title]="'PPR_UPLOADPAGE_HEADERTITLE'"
+        [text]="'PPR_UPLOADPAGE_HEADERTEXT'"
+        [link]="'#'"
     ></bid-header>
     <bid-select-language
         [selected]="selectedLanguage"
@@ -17,13 +17,29 @@
         [limit]="documentLimit"
         [readonly]="readonly"
     ></bid-document-viewer>
+    <!-- DISTRIBUTION LIST -->
+    <bid-distribution-list-section></bid-distribution-list-section>
+    <!-- DISTRIBUTION LIST -->
+    <bid-phase-history
+        *ngIf="phaseData.length > 0"
+        [phaseData]="phaseData"
+        [addActive]="active"
+        (closed)="active = $event"
+    ></bid-phase-history>
     <!-- COMPONENT FOOTER ACTIONS  -->
-    <footer class="bid-actions-footer">
+    <footer class="bid-actions-footer" *ngIf="!readonly">
         <div class="bid-actions-footer__wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-end">
+                            <button
+                                class="btn btn-secondary t-margin-right-xxlarge"
+                                (click)="openDeleteModal = true"
+                                *ngIf="deletePermission"
+                            >
+                                {{ 'PPR_UPLOADPACKAGE_DELETE' | translate }}
+                            </button>
                             <button
                                 class="btn btn-footer"
                                 (click)="opened = true"
@@ -43,8 +59,13 @@
 </div>
 <!-- COMPONENT FOOTER ACTIONS  -->
 <bid-modal-confirm
+    [opened]="openDeleteModal"
+    [title]="'Delete template'"
+    [confirm]="'Delete template'"
+    (closed)="deleteTemplate($event)"
+    [delete]="true"
+></bid-modal-confirm>
+<bid-modal-confirm
     [opened]="opened"
-    [title]="modalTitle"
-    [confirm]="modalConfirm"
     (closed)="onCloseConfirm($event)"
 ></bid-modal-confirm>

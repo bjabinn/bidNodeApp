@@ -3,37 +3,35 @@ import { Confidentiality } from '../enums/confidentiality.enum';
 import { Type } from '../enums/type.enum';
 import { ApiProperty } from '@nestjs/swagger';
 export class DocumentsPackage {
-    @ApiProperty()
     id: string;
-    @ApiProperty()
+
     type: DocumentsPackageType;
-    @ApiProperty()
+
     documents: Document[];
 }
 
 export class Document {
-    @ApiProperty()
-    id: string;
-    @ApiProperty()
+    id?: string;
+
     blobId: string;
-    @ApiProperty()
-    ezshareId: string;
-    @ApiProperty()
-    name: string;
-    @ApiProperty()
+
+    ezshareId?: string;
+
+    name?: string;
+
     language: string;
-    @ApiProperty()
+
     extension: string;
-    @ApiProperty()
+
     confidentiality?: Confidentiality;
-    @ApiProperty()
+
     type: Type;
-    @ApiProperty()
+
     createdBy: string;
-    @ApiProperty()
+
     created: string;
-    @ApiProperty()
+
     keyDocument?: boolean;
-    @ApiProperty()
-    version: string;
+
+    version?: string;
 }

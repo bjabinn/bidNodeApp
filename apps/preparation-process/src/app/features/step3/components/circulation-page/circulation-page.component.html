@@ -1,86 +1,198 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <div class="k-panelbar k-panelbar--no-collapse">
-                <div class="k-item">
-                    <div class="k-header k-link">
-                        <span class="k-header-title">CIRCULATION PERIOD INFORMATION</span>
-                        <a href="#" title="Edit information" class="k-header-edit">
-                            <i class="far fa-pen k-header-icon"></i>
-                            <span class="k-header-edit-text">Edit information</span>
-                        </a>
-                    </div>
-                    <div class="k-content">
-                        <!-- <div class="d-flex align-items-center justify-content-between k-content__row"> -->
-                        <div class="container-fluid">
-                            <div class="row">
-                                <!-- <div class="k-content__datepicker"> -->
-                                <div class="col-5">
-                                    <kendo-datepicker
-                                        class="bid-datepicker"
-                                        [(value)]="value1"
-                                        [popupSettings]="{ popupClass: popupClass }"
-                                    ></kendo-datepicker>
-                                    <kendo-datepicker
-                                        class="bid-datepicker"
-                                        [(value)]="value2"
-                                        [popupSettings]="{ popupClass: popupClass }"
-                                    ></kendo-datepicker>
-                                    <!-- <kendo-daterange class="bid-datepicker">
-                                        <label class="bid-datepicker__label">
-                                            <span class="bid-datepicker__label-txt">Start Date</span>
-                                            <kendo-dateinput kendoDateRangeStartInput DateRangePopupComponent
-                                                [(value)]="range.start"
-                                                [format]="'d MMM y'"
-                                                class="prueba"
-                                            >
-                                            </kendo-dateinput>
-                                        </label>
-                                        <label class="bid-datepicker__label">
-                                            <span class="bid-datepicker__label-txt">End Date*</span>
-                                            <kendo-dateinput kendoDateRangeEndInput
-                                                [(value)]="range.end"
-                                                [format]="'d MMM y'"
-                                            ></kendo-dateinput>
-                                        </label>
-                                        <kendo-daterange-popup
-                                            [appendTo]="'component'"
-                                        ></kendo-daterange-popup>
-                                    </kendo-daterange> -->
-                                </div>
-                                <!-- <div class="k-content__col"> -->
-                                <div class="col-5">
-                                    <div>
-                                        <input id="period" type="checkbox" kendoCheckBox class="t-margin-right-small bid-checkbox__input"/>
-                                        <label for="period" class="bid-checkbox__label">Shortened or Extended Circulation Period</label>
+            <form action="">
+                <div class="k-panelbar k-panelbar--no-collapse">
+                    <div class="k-item">
+                        <div class="k-header k-link">
+                            <span class="k-header-title">{{'PPR_CIRCPERIOD_TITLE' | translate}}</span>
+                            <a href="#" title="Edit information" class="k-header-edit">
+                                <i class="far fa-pen k-header-icon"></i>
+                                <span class="k-header-edit-text">{{'PPR_CIRCPERIOD_SUBTITLE' | translate}}</span>
+                            </a>
+                        </div>
+                        <div class="k-content">
+                            <!-- <div class="d-flex align-items-center justify-content-between k-content__row"> -->
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <!-- <div class="k-content__datepicker"> -->
+                                    <div class="col-5">
+                                        <div class="bid-datepicker">
+                                            <div class="bid-datepicker__wrapper t-margin-right-xlarge">
+                                                <span class="bid-datepicker__title">{{'PPR_CIRCPERIOD_LABELDATE1' | translate}}</span>
+                                                <kendo-datepicker
+                                                    class="bid-datepicker__input"
+                                                    [(value)]="value1"
+                                                    [popupSettings]="{ popupClass: datepickerClass }"
+                                                    [navigation]="false"
+                                                ></kendo-datepicker>
+                                            </div>
+                                            <div class="bid-datepicker__wrapper t-margin-right-xlarge">
+                                                <span class="bid-datepicker__title">{{'PPR_CIRCPERIOD_LABELDATE2' | translate}}</span>
+                                                <kendo-datepicker
+                                                    class="bid-datepicker__input bid-datepicker__input--warning"
+                                                    [(value)]="value2"
+                                                    [popupSettings]="{ popupClass: datepickerClass }"
+                                                    [navigation]="false"
+                                                ></kendo-datepicker>
+                                                <span class="bid-datepicker__hint">{{'PPR_CIRCPERIOD_LABELDATE3' | translate}}</span>
+                                            </div>
+                                        </div>
+                                        <!-- <kendo-daterange class="bid-datepicker">
+                                            <label class="bid-datepicker__label">
+                                                <span class="bid-datepicker__label-txt">Start Date</span>
+                                                <kendo-dateinput kendoDateRangeStartInput DateRangePopupComponent
+                                                    [(value)]="range.start"
+                                                    [format]="'d MMM y'"
+                                                    class="prueba"
+                                                >
+                                                </kendo-dateinput>
+                                            </label>
+                                            <label class="bid-datepicker__label">
+                                                <span class="bid-datepicker__label-txt">End Date*</span>
+                                                <kendo-dateinput kendoDateRangeEndInput
+                                                    [(value)]="range.end"
+                                                    [format]="'d MMM y'"
+                                                ></kendo-dateinput>
+                                            </label>
+                                            <kendo-daterange-popup
+                                                [appendTo]="'component'"
+                                            ></kendo-daterange-popup>
+                                        </kendo-daterange> -->
                                     </div>
-                                    <div>
-                                        <p class="bid-checkbox__info">Here goes an explanation of what “Extend or Shorten Circulation Period” means</p>
+                                    <!-- <div class="k-content__col"> -->
+                                    <div class="col-5">
+                                        <div class="t-margin-bottom-large">
+                                            <div>
+                                                <input id="period" type="checkbox" kendoCheckBox class="t-margin-right-small bid-checkbox__input"/>
+                                                <label for="period" class="bid-checkbox__label">{{'PPR_CIRCPERIOD_CHECKLABEL1' | translate}}</label>
+                                            </div>
+                                            <div>
+                                                <p class="bid-checkbox__info">Here goes an explanation of what “Extend or Shorten Circulation Period” means</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="k-content__col"> -->
+                                    <div class="col-2">
+                                        <div class="text-right t-margin-bottom-large">
+                                            <span class="d-block txt--small txt--black txt--italic">{{'PPR_CIRCPERIOD_BODY1' | translate}}</span>
+                                            <span class="txt--xlarge txt--bold txt--black">5{{'PPR_CIRCPERIOD_BODY2' | translate}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- <div class="k-content__col"> -->
-                                <div class="col-2">
-                                    <div class="text-right">
-                                        <span class="d-block txt--small txt--black txt--italic">Circulation Period will consist of:</span>
-                                        <span class="txt--xlarge txt--bold txt--black">5 days</span>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="bid-textarea bid-textarea--error">
+                                            <span class="bid-textarea__label">{{'PPR_CIRCPERIOD_TEXTAREA1' | translate}}*</span>
+                                            <textarea kendoTextArea class="bid-textarea__input"></textarea>
+                                            <span class="bid-textarea__hint">{{'PPR_CIRCPERIOD_TEXTAREA2' | translate}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4">
-                                    <span class="d-block txt--bold txt--xxlarge txt--black">Do you need a Face to face Meeting?</span>
-                                    <span class="d-block txt--italic t-margin-bottom-xlarge">Here goes an explanation of what “Face to Face Meeting means”</span>
-                                    <kendo-switch
-                                        [onLabel]="'YES'"
-                                        [offLabel]="'NO'"
-                                        class="k-switch--big"
-                                    ></kendo-switch>
+                                <div class="row">
+                                    <div class="bid-face2face">
+                                        <div class="bid-face2face__switch">
+                                            <div class="bid-face2face__row">
+                                                <div class="bid-face2face__col">
+                                                    <span class="bid-face2face__title">{{'PPR_CIRCPERIOD_SWITCHTITLE' | translate}}</span>
+                                                    <kendo-switch
+                                                        [onLabel]="'YES'"
+                                                        [offLabel]="'NO'"
+                                                        class="k-switch--big"
+                                                    ></kendo-switch>
+                                                </div>
+                                            </div>
+                                            <div class="bid-face2face__row">
+                                                <div class="bid-face2face__col">
+                                                    <div kendoTooltip position="bottom" closable="true" showOn="click" tooltipClass="bid-tooltip" class="bid-face2face__tooltip-icon">
+                                                        <i class="fas fa-info-circle" title="{{'PPR-CIRCPERIOD_SWITCHTOOLTIP' | translate}}"></i>
+                                                    </div>
+                                                    <span class="bid-face2face__tooltip-label">{{'PPR_CIRCPERID_SWITCHLABEL3' | translate}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bid-face2face__date">
+                                            <div class="bid-face2face__row">
+                                                <div class="bid-face2face__col">
+                                                    <div class="bid-datepicker">
+                                                        <div class="bid-datepicker__wrapper">
+                                                            <span class="bid-datepicker__title">{{'PPR_CIRCPERIODMEETING_LABEL1' | translate}}</span>
+                                                            <kendo-datepicker
+                                                                class="bid-datepicker__input"
+                                                                [(value)]="value3"
+                                                                [popupSettings]="{ popupClass: datepickerClass }"
+                                                                [navigation]="false"
+                                                            ></kendo-datepicker>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bid-face2face__col">
+                                                    <div class="bid-timepicker">
+                                                        <div class="bid-timepicker__wrapper">
+                                                            <span class="bid-timepicker__title">{{'PPR_CIRCPERIODMEETING_LABEL2' | translate}}</span>
+                                                            <kendo-timepicker
+                                                            format="HH:mm"
+                                                            [steps]="steps"
+                                                            [popupSettings]="{ popupClass: timepickerClass }"
+                                                            placeholder = "{{'PPR_CIRCPERIODMEETING_PLACEHOLDER1' | translate}}"
+                                                            ></kendo-timepicker>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bid-face2face__col">
+                                                    <div class="bid-timepicker">
+                                                        <div class="bid-timepicker__wrapper">
+                                                            <span class="bid-timepicker__title">{{'PPR_CIRCPERIODMEETING_LABEL3' | translate}}</span>
+                                                            <kendo-timepicker
+                                                            format="HH:mm"
+                                                            [steps]="steps"
+                                                            [popupSettings]="{ popupClass: timepickerClass }"
+                                                            placeholder = "{{'PPR_CIRCPERIODMEETING_PLACEHOLDER2' | translate}}"
+                                                            ></kendo-timepicker>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bid-face2face__col">
+                                                    <div class="bid-textbox bid-textbox--rooms">
+                                                        <label for="meetingRooms" class="bid-textbox__label">{{'PPR_CIRCPERIODMEETING_LABEL4' | translate}}</label>
+                                                        <div class="bid-textbox__input-container">
+                                                            <input kendoTextBox
+                                                                id="meetingRooms"
+                                                                placeholder="{{'PPR_CIRCPERIODMEETING_PLACEHOLDER3' | translate}}"
+                                                            />
+                                                            <i class="fal fa-map-marker-alt bid-textbox__icon"></i>
+                                                        </div>
+                                                        <span class="bid-textbox__hint">{{'PPR_CIRCPERIODMEETING_LABEL5' | translate}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bid-face2face__row">
+                                                <div class="bid-face2face__col">
+                                                    <div>
+                                                        <input id="period" type="checkbox" kendoCheckBox class="t-margin-right-small bid-checkbox__input"/>
+                                                        <label for="period" class="bid-checkbox__label">{{'PPR_CIRCPERIODMEETING_LABEL6' | translate}}</label>
+                                                    </div>
+                                                    <div>
+                                                        <p class="bid-checkbox__info">{{'PPR_CIRCPERIODMEETING_LABEL7' | translate}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bid-face2face__row">
+                                                <div class="bid-face2face__col w-100">
+                                                    <div class="bid-textarea">
+                                                        <span class="bid-textarea__label">{{'PPR_CIRCPERIOD_TEXTAREA1' | translate}}*</span>
+                                                        <textarea kendoTextArea class="bid-textarea__input"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

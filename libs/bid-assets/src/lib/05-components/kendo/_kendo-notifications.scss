@@ -9,7 +9,7 @@
 /// @since version 1.0.0
 ////
 .k-notification-group {
-    position: absolute;
+    position: fixed;
     transform: translate(-6px, 60px);
     max-width: rem(516);
     .#{$ns}app--embebbed & {
@@ -46,35 +46,35 @@
         &.k-i-warning,
         &.k-i-info,
         &.k-i-success {
-            font-family: "Font Awesome 5 Pro";
+            font-family: 'Font Awesome 5 Pro';
             font-weight: 900;
         }
 
         &.k-i-success {
             color: $success;
             &:before {
-                content: "";
+                content: '';
             }
         }
 
         &.k-i-info {
             color: $info;
             &:before {
-                content: "";
+                content: '';
             }
         }
 
         &.k-i-warning {
             color: $warning;
             &:before {
-                content: "";
+                content: '';
             }
         }
 
         &.k-i-error {
             color: $danger;
             &:before {
-                content: "";
+                content: '';
             }
         }
     }

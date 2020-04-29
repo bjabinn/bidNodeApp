@@ -1,0 +1,60 @@
+<kendo-dialog *ngIf="active" [width]="840" [height]="450" (close)="closeForm()">
+    <kendo-dialog-titlebar>
+        {{ 'PPR_DISTRIBUTIONEDIT_HEADER' | translate }}
+    </kendo-dialog-titlebar>
+
+    <p class="t-margin-bottom-xxlarge">
+        <strong class="font-weight-bold">
+            {{ 'PPR_DISTRIBUTIONEDIT_BODY1' | translate }}
+        </strong>
+    </p>
+
+    <div>
+        <span class="bid-dialog__txt--small t-margin-bottom-small">{{
+            'PPR_DISTRIBUTIONEDIT_BODY2' | translate
+        }}</span>
+        <kendo-multiselect
+            #select
+            [data]="members | async"
+            [textField]="'memberId'"
+            [valueField]="'memberId'"
+            [filterable]="true"
+            [autoClose]="false"
+            [popupSettings]="{ popupClass: popupClass }"
+            [(ngModel)]="addedMembers"
+            (filterChange)="searchMember($event)"
+            placeholder="{{ 'PPR_DISTRIBUTIONEDIT_PLACEHOLDER' | translate }}"
+            class="k-multiselect--users t-margin-bottom-small"
+        >
+            <ng-template
+                kendoMultiSelectHeaderTemplate
+                *ngIf="searchText.length"
+            >
+                <div class="k-popup__search">
+                    <i class="fal fa-search k-popup__search-icon"></i>
+                    <span class="k-popup__search-title"
+                        >{{ 'SEARCH_FOR' | translate }}
+                    </span>
+                    <strong class="k-popup__search-input">{{
+                        searchText
+                    }}</strong>
+                </div>
+            </ng-template>
+        </kendo-multiselect>
+    </div>
+
+    <p
+        class="bid-dialog__txt--small bid-dialog__txt--italic bid-dialog__txt--primary-light"
+    >
+        {{ 'PPR_DISTRIBUTIONEDIT_BODY3' | translate }}
+    </p>
+
+    <kendo-dialog-actions layout="normal">
+        <button kendoButton class="btn btn-link" (click)="onCancel($event)">
+            {{ 'CANCEL' | translate }}
+        </button>
+        <button kendoButton primary="true" (click)="onSave($event)">
+            {{ 'SAVE' | translate }}
+        </button>
+    </kendo-dialog-actions>
+</kendo-dialog>

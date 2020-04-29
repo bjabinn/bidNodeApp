@@ -1,13 +1,8 @@
 import { Controller, Get, Param, Post, Body, Delete } from '@nestjs/common';
-import {
-    ApiBearerAuth,
-    ApiOperation,
-    ApiResponse,
-    ApiTags,
-    ApiParam
-} from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { StepsService } from '../../steps/service/steps.service';
-import { Step, DistributionListMember } from '@bid/bid-api-service';
+import { Step } from '../../dataModel/models/step.model';
+import { DistributionListMember } from '../../dataModel/models/distribution-list-member.model';
 import { Observable } from 'rxjs';
 import { MeetingsService } from '../../meetings/service/meetings.service';
 
@@ -20,11 +15,6 @@ export class OperationsController {
     ) {}
 
     //STEPS
-    @ApiResponse({
-        status: 200,
-        description: 'Get Step Info',
-        type: Step
-    })
     @ApiOperation({
         summary: 'Return the detailed information of a specific step'
     })
@@ -45,7 +35,7 @@ export class OperationsController {
         @Param('operationNumber') operationNumber: string,
         @Param('id') id: string,
         @Body() step: Step
-    ): Observable<any> {
+    ): Observable<string> {
         return this.stepService.moveNextStep(operationNumber, id, step);
     }
 
@@ -58,7 +48,7 @@ export class OperationsController {
         @Param('operationNumber') operationNumber: string,
         @Param('id') id: string,
         @Body() step: Step
-    ): Observable<any> {
+    ): Observable<string> {
         return this.stepService.returnStep(operationNumber, id, step);
     }
 
@@ -69,7 +59,7 @@ export class OperationsController {
         @Param('operationNumber') operationNumber: string,
         @Param('id') memberId: string,
         memberCollection: DistributionListMember[]
-    ): Observable<any> {
+    ): Observable<string> {
         return this.meetingService.addDLMember(
             operationNumber,
             memberId,
@@ -83,7 +73,7 @@ export class OperationsController {
         @Param('operationNumber') operationNumber: string,
         @Param('id') id: string,
         @Param('memberId') memberId: string
-    ): Observable<any> {
+    ): Observable<string> {
         return this.meetingService.deleteMember(operationNumber, id, memberId);
     }
 }

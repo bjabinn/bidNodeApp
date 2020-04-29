@@ -1,7 +1,9 @@
 import { Injectable, HttpService } from '@nestjs/common';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import { StepResponse, Step, StepMapper } from '@bid/bid-api-service';
+import { StepMapper } from '@bid/bid-api-service';
+import { StepResponse } from '../../dataModel/interfaces/StepResponse.interface';
+import { Step } from '../../dataModel/models/step.model';
 import { AxiosResponse } from 'axios';
 import { map, tap } from 'rxjs/operators';
 

@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styles: []
 })
 export class CirculationDistributedPageComponent implements OnInit {
+    status: boolean = true;
     constructor() {}
 
     ngOnInit(): void {}
+
+    toggleClass() {
+        this.status = !this.status;
+    }
 }

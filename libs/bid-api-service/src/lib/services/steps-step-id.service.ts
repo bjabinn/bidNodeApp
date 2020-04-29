@@ -1,11 +1,17 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '@bid/pp/environments/environment';
+import { Step } from '@bid/bid-api-service';
+import { map } from 'rxjs/operators';
+
 // Model import
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AppStepsStepIdService {
+    operationNumber: 'Mocknumber';
     // Http Headers <Add your own config>
+
     httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
@@ -17,33 +23,51 @@ export class AppStepsStepIdService {
      * @param {HttpClient} http
      */
 
-    constructor(private http: HttpClient, @Inject('env') private env) {}
+    constructor(private http: HttpClient) {}
 
     /**
      * @description Find step by ID
-     * @return {Observable<any>}
+     * @return {Observable<Step>}
      * @param step-id
      */
-    getStepsStepId(stepId): Observable<any> {
-        console.log('URL', `${this.env.stepsUrl}/steps/${stepId}`);
+    getStep(stepId: string): Observable<Step> {
         return this.http.get<any>(
-            `${this.env.stepsUrl}/steps/${stepId}`,
+            `${environment.middlewareUrl}/operations/${this.operationNumber}/steps/${stepId}`,
             this.httpOptions
         );
     }
 
     /**
      * @description Post a step
-     * @return {Observable<any>}
+     * @return {Observable<string>}
      * @param step-id
      * @param step
      */
-    postStepsStepId(stepId, step): Observable<any> {
+    nextMove(stepId: string, step: Step): Observable<string> {
         const paramsBody = step;
-        return this.http.post<any>(
-            `${this.env.stepsUrl}/steps/${stepId}/move-next`,
-            paramsBody,
-            this.httpOptions
-        );
+        return this.http
+            .post(
+                `${environment.middlewareUrl}/operations/${this.operationNumber}/steps/${stepId}/move-next`,
+                paramsBody,
+                this.httpOptions
+            )
+            .pipe(map((res: string) => res));
+    }
+
+    /**
+     * @description Return to a step
+     * @return {Observable<string>}
+     * @param step-id
+     * @param step
+     */
+    return(stepId: string, step: Step): Observable<string> {
+        const paramsBody = step;
+        return this.http
+            .post(
+                `${environment.middlewareUrl}/operations/${this.operationNumber}/steps/${stepId}/return`,
+                paramsBody,
+                this.httpOptions
+            )
+            .pipe(map((res: string) => res));
     }
 }

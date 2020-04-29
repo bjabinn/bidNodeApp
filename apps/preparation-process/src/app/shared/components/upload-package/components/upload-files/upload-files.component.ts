@@ -2,6 +2,7 @@ import {
     Component,
     Input,
     AfterContentChecked,
+    OnInit,
     OnDestroy
 } from '@angular/core';
 import { DialogRef, DialogContentBase } from '@progress/kendo-angular-dialog';
@@ -19,11 +20,10 @@ import { TemporalDocumentService } from '@bid/bid-api-service';
     templateUrl: './upload-files.component.html'
 })
 export class UploadFilesComponent extends DialogContentBase
-    implements AfterContentChecked, OnDestroy {
+    implements AfterContentChecked, OnInit, OnDestroy {
     @Input() limit: number;
     @Input() documentRestriction: FileRestrictions;
 
-    public uploads$: Observable<BlobItemUpload[]>;
     public uploadForm: FormGroup;
     public myFiles: Array<any>;
     public submitted = false;
@@ -31,8 +31,10 @@ export class UploadFilesComponent extends DialogContentBase
     public prevContent: string;
     public newContent: string;
     public nextContent: string;
+    public uploads$: Observable<BlobItemUpload[]> = this.blobState
+        .uploadedItems$;
 
-    private subscription: Subscription;
+    private subscriptionsCollection: Subscription[] = [];
 
     constructor(
         public dialog: DialogRef,
@@ -44,21 +46,21 @@ export class UploadFilesComponent extends DialogContentBase
         this.uploadForm = this.fb.group({
             files: [this.myFiles, [Validators.required]]
         });
-
-        this.uploads$ = this.blobState.uploadedItems$;
-        this.subscription = this.uploads$.subscribe();
-        this.prevContent = 'Drag an drop a file here or ';
-        this.newContent = 'Choose files';
-        this.nextContent = ' from your computer.';
     }
 
-    ngAfterContentChecked() {
-        this.limit > 1 ? (this.isMultiple = true) : (this.isMultiple = false);
+    ngOnInit(): void {
+        this.subscribeUploads();
     }
-    onCancelAction() {
+
+    ngAfterContentChecked(): void {
+        this.checkLimit();
+    }
+
+    public onCancelAction(): void {
         this.dialog.close(false);
     }
-    save(files: FileList, valid: boolean) {
+
+    public save(files: FileList, valid: boolean): void {
         this.submitted = true;
         if (valid) {
             this.blobState.uploadItems(files);
@@ -67,11 +69,23 @@ export class UploadFilesComponent extends DialogContentBase
         }
     }
 
-    getProgress(progress: number): boolean {
+    public getProgress(progress: number): boolean {
         return progress === 100 ? true : false;
     }
 
-    ngOnDestroy() {
-        this.subscription.unsubscribe();
+    private subscribeUploads(): void {
+        this.subscriptionsCollection.push(this.uploads$.subscribe());
+    }
+
+    private checkLimit(): void {
+        this.isMultiple = this.limit > 1;
+    }
+
+    private unsubscribeAll(): void {
+        this.subscriptionsCollection.forEach(sub => sub.unsubscribe);
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribeAll();
     }
 }

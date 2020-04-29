@@ -9,6 +9,14 @@
 /// @since version 1.0.0
 ////
 .k-dialog {
+    &-wrapper {
+        &.k-dialog-wrapper--no-close {
+            .k-window-actions.k-dialog-actions {
+                display: none;
+            }
+        }
+    }
+
     border-radius: rem(12);
 
     //TITLE BAR

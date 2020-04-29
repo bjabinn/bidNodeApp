@@ -52,6 +52,17 @@ kendo-popup {
         padding: rem(10) rem(0);
         border-radius: rem(5);
 
+        .k-popup__search {
+            font-size: rem(16);
+            color: color('black');
+            background-color: color('gray-200');
+            padding: rem(18) rem(18);
+        }
+        .k-popup__search-icon {
+            font-size: rem(16);
+            margin-right: rem(18);
+        }
+
         .k-list {
             .k-item {
                 font-size: rem(16);
@@ -101,20 +112,21 @@ kendo-popup {
         .k-calendar {
             .k-calendar-header {
                 .k-today {
-                    color: color('primary');
+                    color: color('primary-light');
                 }
             }
 
             .k-content {
                 .k-today {
-                    color: color('primary');
+                    color: color('primary-light');
                 }
             }
 
             .k-state-selected {
                 .k-link {
-                    border-color: color('primary');
-                    background-color: color('primary');
+                    background-color: color('primary-light');
+                    border-radius: 50%;
+                    border: none;
                 }
             }
         }

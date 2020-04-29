@@ -1,0 +1,227 @@
+<ng-template #template let-anchor>
+    <span [innerHTML]="anchor.nativeElement.innerText"></span>
+</ng-template>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="panelbar-wrapper">
+                <kendo-panelbar>
+                    <kendo-panelbar-item
+                        title="{{ 'PPR_PHASEHISTORY' | translate }}"
+                    >
+                        <ng-template kendoPanelBarContent>
+                            <div
+                                kendoTooltip
+                                showOn="none"
+                                [tooltipTemplate]="template"
+                                (mouseover)="showTooltip($event)"
+                            >
+                                <kendo-grid
+                                    [kendoGridBinding]="gridView"
+                                    [sortable]="true"
+                                    [filterable]="true"
+                                    (filterChange)="onFilter($event)"
+                                    class="k-grid--grey"
+                                >
+                                    <kendo-grid-column
+                                        field="step"
+                                        title="{{ 'Step' }}"
+                                    >
+                                        <ng-template
+                                            kendoGridHeaderTemplate
+                                            let-column
+                                            let-filter
+                                        >
+                                            <strong
+                                                [hidden]="column.filterActive"
+                                                >{{ column.field }}</strong
+                                            >
+                                            <label
+                                                for="step"
+                                                class="hide-accessible"
+                                                >Step search</label
+                                            >
+                                            <input
+                                                [hidden]="!column.filterActive"
+                                                placeholder="Step search"
+                                                kendoTextBox
+                                                (input)="
+                                                    onFilter(
+                                                        $event.target.value,
+                                                        column.field
+                                                    )
+                                                "
+                                                id="step"
+                                                class="k-textbox"
+                                            />
+                                            <button
+                                                (click)="
+                                                    column.filterActive = column.filterActive
+                                                        ? false
+                                                        : true
+                                                "
+                                                title="Filtrar"
+                                            >
+                                                <span
+                                                    class="k-icon k-i-filter"
+                                                ></span>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column
+                                        field="date"
+                                        filter="date"
+                                        format="{0:d}"
+                                        title="{{ 'Date' }}"
+                                    >
+                                        <ng-template
+                                            kendoGridHeaderTemplate
+                                            let-column
+                                            let-filter
+                                            filter="date"
+                                            format="{0:d}"
+                                        >
+                                            <strong
+                                                [hidden]="column.filterActive"
+                                                >{{ column.field }}</strong
+                                            >
+                                            <kendo-daterange
+                                                [hidden]="!column.filterActive"
+                                            >
+                                                <label>
+                                                    <span
+                                                        class="label hide-accessible"
+                                                        >Start</span
+                                                    >
+                                                    <kendo-dateinput
+                                                        kendoDateRangeStartInput
+                                                        [(value)]="
+                                                            dateRange.start
+                                                        "
+                                                        (valueChange)="
+                                                            onFilterDate(
+                                                                dateRange.start,
+                                                                dateRange.end
+                                                            )
+                                                        "
+                                                    ></kendo-dateinput>
+                                                </label>
+                                                <label>
+                                                    <span
+                                                        class="label hide-accessible"
+                                                        >End</span
+                                                    >
+                                                    <kendo-dateinput
+                                                        kendoDateRangeEndInput
+                                                        [(value)]="
+                                                            dateRange.end
+                                                        "
+                                                        (valueChange)="
+                                                            onFilterDate(
+                                                                dateRange.start,
+                                                                dateRange.end
+                                                            )
+                                                        "
+                                                    ></kendo-dateinput>
+                                                </label>
+                                            </kendo-daterange>
+                                            <button
+                                                (click)="
+                                                    column.filterActive = column.filterActive
+                                                        ? false
+                                                        : true;
+                                                    resetFilters()
+                                                "
+                                                title="Filtrar"
+                                            >
+                                                <span
+                                                    class="k-icon k-i-filter"
+                                                ></span>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column
+                                        field="user"
+                                        title="{{ 'User' }}"
+                                    >
+                                        <ng-template
+                                            kendoGridHeaderTemplate
+                                            let-column
+                                            let-filter
+                                        >
+                                            <strong
+                                                [hidden]="column.filterActive"
+                                                >{{ column.field }}</strong
+                                            >
+                                            <label
+                                                for="user"
+                                                class="hide-accessible"
+                                                >User search</label
+                                            >
+                                            <input
+                                                [hidden]="!column.filterActive"
+                                                placeholder="User search"
+                                                kendoTextBox
+                                                (input)="
+                                                    onFilter(
+                                                        $event.target.value,
+                                                        column.field
+                                                    )
+                                                "
+                                                id="user"
+                                                class="k-textbox"
+                                            />
+                                            <button
+                                                (click)="
+                                                    column.filterActive = column.filterActive
+                                                        ? false
+                                                        : true
+                                                "
+                                                title="Filtrar"
+                                            >
+                                                <span
+                                                    class="k-icon k-i-filter"
+                                                ></span>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column
+                                        field="description"
+                                        title="{{ 'Description' }}"
+                                        width="450"
+                                        [filterable]="false"
+                                    >
+                                        <ng-template
+                                            kendoGridHeaderTemplate
+                                            let-column
+                                        >
+                                            <strong>{{ column.field }}</strong>
+                                        </ng-template>
+                                        <ng-template
+                                            kendoGridCellTemplate
+                                            let-dataItem
+                                        >
+                                            <p
+                                                class="bid-table__cell"
+                                                [innerHTML]="
+                                                    dataItem.description
+                                                "
+                                            ></p>
+                                            <strong
+                                                [innerHTML]="'Reason'"
+                                            ></strong>
+                                            <p
+                                                class="bid-table__cell"
+                                                [innerHTML]="dataItem.reason"
+                                            ></p>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                </kendo-grid>
+                            </div>
+                        </ng-template>
+                    </kendo-panelbar-item>
+                </kendo-panelbar>
+            </div>
+        </div>
+    </div>
+</section>

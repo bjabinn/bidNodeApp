@@ -1,1 +1,56 @@
-<p>circulation-distributed-page works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="k-panelbar k-panelbar--no-collapse">
+                <div class="k-item">
+                    <div class="k-header k-link">
+                        <span class="k-header-title">{{'PPR_CIRCPERIOD_TITLE' | translate}}</span>
+                        <a href="#" title="Edit information" class="k-header-edit">
+                            <i class="far fa-pen k-header-icon"></i>
+                            <span class="k-header-edit-text">{{'PPR_CIRCPERIOD_SUBTITLE' | translate}}</span>
+                        </a>
+                    </div>
+                    <div class="k-content">
+                        <div class="bid-circ-info">
+                            <div class="bid-circ-info__col">
+                                <div class="bid-circ-info__title-wrapper">
+                                    <span class="bid-circ-info__title">{{'PPR_CIRCPERIODINFO_TITLE' | translate}}</span>
+                                    <span class="bid-circ-info__state">{{'PPR_CIRCPERIODINFO_STATE' | translate}}</span>
+                                </div>
+                                <div class="bid-circ-info__content">
+                                    <div class="bid-circ-info__date-wrapper">
+                                        <div class="d-block">
+                                            <i class="fal fa-calendar"></i>
+                                            <span class="bid-circ-info__date-title">{{'PPR_CIRCPERIOD_LABELDATE1' | translate}}</span>
+                                        </div>
+                                        <span class="bid-circ-info__date">1 Feb 2020</span>
+                                    </div>
+                                    <div class="bid-circ-info__date-wrapper">
+                                        <div class="d-block">
+                                            <i class="fal fa-calendar"></i>
+                                            <span class="bid-circ-info__date-title">{{'PPR_CIRCPERIOD_LABELDATE2' | translate}}</span>
+                                        </div>
+                                        <span class="bid-circ-info__date">6 Feb 2020</span>
+                                        <span class="bid-circ-info__due-time">{{'PPR_CIRCPERIODINFO_TIME' | translate}}5:30 PM (DC)</span>
+                                    </div>
+                                    <div class="bid-circ-info__just">
+                                        <span class="bid-circ-info__just-title" (click)="toggleClass()">{{'PPR_CIRCPERIODINFO_LABEL2' | translate}}</span>
+                                        <p class="bid-circ-info__just-content" [ngClass]="status ? 'bid-circ-info__just-content' : 'bid-circ-info__just-content--hidden'">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt.
+                                            Nunc congue nisi vitae suscipit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bid-circ-info__col">
+                                <div class="bid-circ-info__title-wrapper">
+                                    <span class="bid-circ-info__title">{{'PPR_CIRCPERIODINFO_LABEL3' | translate}}</span>
+                                </div>
+                                <p class="bid-circ-info__description">{{'PPR_CIRCPERIODINFO_BODY1' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

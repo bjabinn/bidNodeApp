@@ -34,6 +34,7 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 
 //Rutas
 import { AppRoutingModule } from './app-routing.module';
+import { TimelineModule } from './features/timeline/timeline.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -50,10 +51,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        HttpClientModule,
         FormsModule,
-        CoreModule.forRoot(environment),
-        BidUtilsModule.forRoot(environment),
+        CoreModule,
+        BidUtilsModule,
         BidTranslateModule.forRoot(environment),
         BidHandleErrorsModule.forRoot(environment),
         BidApiServiceModule.forRoot(environment),
@@ -69,7 +69,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
         LayoutModule,
         InputsModule,
-        DropDownsModule
+        DropDownsModule,
+        TimelineModule
     ],
     entryComponents: [],
     providers: [

@@ -578,5 +578,5 @@
             "unitTestRunner": "jest"
         }
     },
-    "defaultProject": "showcase"
+    "defaultProject": "preparation-process"
 }

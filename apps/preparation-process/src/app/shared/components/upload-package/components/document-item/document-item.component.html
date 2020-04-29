@@ -2,8 +2,8 @@
     <div *ngFor="let item of deletedItems$ | async"></div>
     <kendo-dropdownbutton
         *ngIf="!readonly"
-        [data]="data"
-        [textField]="'actionName'"
+        [data]="itemMenu"
+        [textField]="'actionName' | translate"
         [popupSettings]="{ align: 'right', popupClass: popupClass }"
     >
         <i class="fas fa-ellipsis-h"></i>
@@ -11,7 +11,9 @@
     <kendo-card-header>
         <figure class="ic-sprites pdf"></figure>
         <div class="card-header-info">
-            <span class="card-label">ID NUMBER</span>
+            <span class="card-label">{{
+                'PPR_UPLOADDOCUMENT_ITEMID' | translate
+            }}</span>
             <a
                 href="#"
                 class="card-ref"
@@ -27,20 +29,24 @@
     <kendo-card-body>
         <div class="k-hbox">
             <div class="k-column k-text-left">
-                <span class="card-label">Document Name</span>
+                <span class="card-label">{{
+                    'PPR_UPLOADDOCUMENT_ITEMNAME' | translate
+                }}</span>
                 <p>{{ documentItem.name || '-' }}</p>
             </div>
         </div>
 
         <div class="k-hbox">
             <div class="k-column k-text-left">
-                <span class="card-label">Type</span>
+                <span class="card-label">{{ 'TYPE' | translate }}</span>
                 <p class="txt txt--bold t-margin-bottom-none">
                     {{ documentItem.type }}
                 </p>
             </div>
             <div class="k-column k-text-left">
-                <span class="card-label">Version</span>
+                <span class="card-label">{{
+                    'VERSION' | translate | uppercase
+                }}</span>
                 <p class="txt txt--bold t-margin-bottom-none">
                     {{ documentItem.version }}
                 </p>
@@ -50,13 +56,13 @@
     <kendo-card-footer>
         <div class="k-hbox">
             <div class="k-column k-text-left">
-                <span class="card-label">User</span>
+                <span class="card-label">{{ 'USER' | translate }}</span>
                 <p class="txt t-margin-bottom-none">
                     {{ documentItem.user?.name }}
                 </p>
             </div>
             <div class="k-column k-text-left">
-                <span class="card-label">Uploaded on</span>
+                <span class="card-label">{{ 'UPLOADEDON' | translate }}</span>
                 <p class="txt t-margin-bottom-none">
                     {{ documentItem.uploadedOn | date: formatDate }}
                 </p>

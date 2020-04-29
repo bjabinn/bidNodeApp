@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BidStorageService } from '@bid/bid-utils';
-import { BidTranslateService } from '@bid/bid-translate';
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class BidTranslateLoader implements TranslateLoader {
     constructor(private storageService: BidStorageService) {}
 

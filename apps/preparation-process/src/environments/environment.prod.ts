@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    stepsUrl: 'http://localhost:5001',
+    baseUrl: 'https://virtserver.swaggerhub.com/lperezga/lpl1la/1.0.0',
     azureUrl: 'https://bidtest.blob.core.windows.net/',
     translateUrl:
         'https://1d138116-9824-427e-97b5-e6be2ea5cb8e.mock.pstmn.io/lang',
@@ -17,7 +17,8 @@ export const environment = {
             dateFormat: 'dd MMM yyyy',
             documentType: 'PPR',
             documentVersion: 'ERM',
-            languages: ['es', 'en', 'pt', 'fr']
+            languages: ['es', 'en', 'pt', 'fr'],
+            maxCommentLength: 8000
         }
     }
 };

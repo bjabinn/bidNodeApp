@@ -3,7 +3,7 @@ import {
     OnInit,
     Input,
     OnChanges,
-    SimpleChanges,
+    SimpleChange,
     OnDestroy
 } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -18,6 +18,7 @@ import {
 import { UploadFilesComponent } from '@bid/pp/app/shared/components/upload-package/components/upload-files/upload-files.component';
 import { DialogService } from '@progress/kendo-angular-dialog';
 import { FileRestrictions } from '@progress/kendo-angular-upload';
+import { BidTranslateService } from '@bid/bid-translate';
 
 @Component({
     selector: 'bid-document-item',
@@ -33,70 +34,47 @@ export class DocumentItemComponent implements OnInit, OnChanges, OnDestroy {
     public downloadUrl = '';
     public deletedItems$ = this.blobDeletes.deletedItems$;
     public popupClass = 'k-popup--document';
+    public itemMenu: Array<any>;
 
     private suscriptionsCollection: Subscription[] = [];
 
-    data: Array<any> = [
-        {
-            actionName: 'Download',
-            click: () => {
-                this.downloadAction(this.documentItem.tempName);
-            },
-            iconClass: 'far fa-download popup-icon'
-        },
-        {
-            actionName: 'Replace',
-            click: () => {
-                this.replaceAction(this.documentItem.tempUuid);
-            },
-            iconClass: 'far fa-exchange popup-icon'
-        },
-        {
-            actionName: 'Delete',
-            click: () => {
-                this.removeAction(this.documentItem.tempName);
-            },
-            iconClass: 'far fa-trash-alt popup-icon'
-        }
-    ];
     constructor(
         private temporalDocService: TemporalDocumentService,
         private dialogService: DialogService,
         private blobDeletes: BlobDeletesViewStateService,
         private blobDownloads: BlobDownloadsViewStateService,
-        private fileService: FilesService
-    ) {
-        this.suscriptionsCollection.push(
-            this.blobDownloads.downloadedItems$.subscribe(res => {
-                this.downloadUrl = res[0].url;
-            })
+        private fileService: FilesService,
+        private translateService: BidTranslateService
+    ) {}
+
+    ngOnInit(): void {
+        this.initItemMenu();
+        this.subscribeDownload();
+    }
+
+    ngOnChanges(changes: { [propKey: string]: SimpleChange }): void {
+        this.changeItem(changes.documentItem);
+    }
+
+    public downloadAction(): void {
+        this.fileService.downloadFile(
+            this.documentItem.urlTemp,
+            this.documentItem.name
         );
     }
-    ngOnChanges(change: SimpleChanges) {
-        this.documentItem = null;
-        this.documentItem = change.documentItem.currentValue;
-    }
-    ngOnInit(): void {}
 
-    downloadAction(name: string, event?: Event) {
-        if (event) {
-            event.preventDefault();
-        }
-        this.fileService.downloadFile(this.documentItem.urlTemp, name);
-    }
-
-    replaceAction(name: string) {
+    public replaceAction(): void {
         const dialogRef = this.dialogService.open({
-            title: 'Replace Document',
-            // Show component or string message
+            title: this.translateService.instant(
+                'PPR_UPLOADDOCUMENT_MODALREPLACE'
+            ),
+
             content: UploadFilesComponent,
             minWidth: 840
         });
         this.suscriptionsCollection.push(
             dialogRef.result.subscribe(res => {
-                if (res) {
-                    this.removeAction(name);
-                }
+                if (res === true) this.removeAction();
             })
         );
         const content = dialogRef.content.instance;
@@ -104,20 +82,53 @@ export class DocumentItemComponent implements OnInit, OnChanges, OnDestroy {
         content.documentRestriction = this.documentRestriction;
     }
 
-    removeAction(filename: string) {
-        this.blobDeletes.deleteItem(filename);
+    public removeAction(): void {
+        this.blobDeletes.deleteItem(this.documentItem.tempName);
         this.temporalDocService.deleteTemporalDocumentFromCollection(
             this.documentItem.tempUuid
         );
     }
 
-    ngOnDestroy() {
-        this.unsubscribeAll();
+    private initItemMenu(): void {
+        this.itemMenu = [
+            {
+                actionName: 'Download',
+                click: () => this.downloadAction(),
+                iconClass: 'far fa-download popup-icon'
+            },
+            {
+                actionName: 'Replace',
+                click: () => this.replaceAction(),
+                iconClass: 'far fa-exchange popup-icon'
+            },
+            {
+                actionName: 'Delete',
+                click: () => this.removeAction(),
+                iconClass: 'far fa-trash-alt popup-icon'
+            }
+        ];
     }
 
-    unsubscribeAll() {
+    private subscribeDownload(): void {
+        this.suscriptionsCollection.push(
+            this.blobDownloads.downloadedItems$.subscribe(res => {
+                this.downloadUrl = res[0].url;
+            })
+        );
+    }
+
+    private changeItem(item: SimpleChange): void {
+        this.documentItem = null;
+        this.documentItem = item.currentValue;
+    }
+
+    private unsubscribeAll(): void {
         this.suscriptionsCollection.forEach((sub: Subscription) =>
             sub.unsubscribe()
         );
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribeAll();
     }
 }

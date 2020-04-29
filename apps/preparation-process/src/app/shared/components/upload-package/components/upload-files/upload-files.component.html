@@ -9,20 +9,20 @@
         [multiple]="isMultiple"
         [restrictions]="documentRestriction"
         class="k-upload--document"
-        style="--before-content: '{{ prevContent }}';--new-content: '{{
-            newContent
-        }}';--after-content: '{{ nextContent }}';--ext-content: '{{
-            documentRestriction?.allowedExtensions
-        }}';"
+        style="
+        --before-content: '{{ 'PPR_UPLOADFILES_PREVCONTENT' | translate }}';
+        --new-content: '{{ 'PPR_UPLOADFILES_NEWCONTENT' | translate }}';
+        --after-content: '{{ 'PPR_UPLOADFILES_NEXTCONTENT' | translate }}';
+        --ext-content: '{{ documentRestriction?.allowedExtensions }}';"
     >
         <kendo-upload-messages
-            [dropFilesHere]="'The file extensions types that are allowed are: '"
+            [dropFilesHere]="'PPR_UPLOADFILES_VALIDEXTENSIONS' | translate"
         >
         </kendo-upload-messages>
     </kendo-fileselect>
     <div class="modal__footer">
         <button kendoButton (click)="onCancelAction()" class="btn btn-link">
-            Cancel
+            {{ 'CANCEL' | translate }}
         </button>
         <button
             kendoButton
@@ -30,7 +30,7 @@
             type="submit"
             primary="true"
         >
-            Upload Document
+            {{ 'PPR_UPLOADDOCUMENT_MODALUPLOAD' | translate }}
         </button>
     </div>
 </form>

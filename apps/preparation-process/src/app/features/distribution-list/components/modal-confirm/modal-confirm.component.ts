@@ -6,14 +6,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     styles: []
 })
 export class ModalConfirmComponent implements OnInit {
-    @Input() opened: boolean;
-    @Input() name: string;
+    @Input() active: boolean;
+    @Input() elementName: string;
     @Output() closed = new EventEmitter<boolean>();
     constructor() {}
 
     ngOnInit(): void {}
 
-    close(submit: boolean) {
+    public close(submit: boolean): void {
         this.closed.emit(submit);
     }
 }

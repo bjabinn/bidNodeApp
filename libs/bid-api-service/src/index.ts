@@ -17,6 +17,7 @@ export * from './lib/api/tv-demo.service';
 
 //RESPONSES INTERFACES
 export * from './lib/interfaces/StepResponse.interface';
+export * from './lib/interfaces/member.interface';
 
 //DTOS
 export * from './lib/dtos/circulation-period.dto';
@@ -53,6 +54,7 @@ export * from './lib/mappers/face-to-face-meeting.mapper';
 export * from './lib/mappers/meeting.mapper';
 export * from './lib/mappers/stepInfo.mapper';
 export * from './lib/mappers/step.mapper';
+export * from './lib/mappers/member.mapper';
 
 //MODELS
 export * from './lib/models/blobItem.model';
@@ -76,6 +78,8 @@ export * from './lib/models/role.model';
 export * from './lib/models/stepInfo.model';
 export * from './lib/models/user.model';
 export * from './lib/models/step.model';
+export * from './lib/models/member.model';
+export * from './lib/models/phaseHistories.model';
 
 //TYPES
 export * from './lib/types/dictionary.type';

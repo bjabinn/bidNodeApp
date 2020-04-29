@@ -1,7 +1,5 @@
 import { BidHandleErrorsModule } from '@bid/bid-handle-errors';
-import { BidUtilsModule } from '@bid/bid-utils';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TemporalDocumentService } from './api/temporalDocument.service';
 import { BlobDeletesViewStateService } from './api/azure-storage/blob-deletes-view-state.service';
@@ -17,12 +15,8 @@ import {
 import { StateProcessService } from './services/state-process.service';
 import { AppStepsStepIdService } from './services/steps-step-id.service';
 @NgModule({
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        BidHandleErrorsModule,
-        BidUtilsModule
-    ]
+    imports: [HttpClientModule, BidHandleErrorsModule],
+    exports: [HttpClientModule]
 })
 export class BidApiServiceModule {
     public static forRoot(environment: any): ModuleWithProviders {

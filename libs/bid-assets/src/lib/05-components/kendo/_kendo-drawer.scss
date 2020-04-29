@@ -13,10 +13,10 @@
         .btn.btn-drawer-toggler {
             position: absolute;
             padding: rem(2);
-            width: rem(20);
-            height: rem(20);
-            left: rem(-10);
-            top: rem(72);
+            width: rem(24);
+            height: rem(24);
+            left: rem(-13);
+            top: rem(81);
             background: color('primary-light');
             color: color('white');
             font-size: rem(10);
@@ -30,7 +30,7 @@
         &--closed {
             padding-left: rem(16);
             .btn.btn-drawer-toggler {
-                left: rem(-10);
+                left: rem(-28);
             }
         }
     }

@@ -14,10 +14,14 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
+import { BidStorageService } from '@bid/bid-utils';
 
 @Injectable()
 export class BidHttpInterceptor implements HttpInterceptor {
-    constructor(private _injector: Injector) {}
+    constructor(
+        private _injector: Injector,
+        private bidStorageSvc: BidStorageService
+    ) {}
 
     intercept(
         request: HttpRequest<unknown>,
@@ -29,7 +33,7 @@ export class BidHttpInterceptor implements HttpInterceptor {
         const logger: LoggingService = this._injector.get(LoggingService);
 
         //Recuperamos el tocken y añadimos a la cabecera
-        const token: string = localStorage.getItem('token');
+        const token: string = this.bidStorageSvc.get('token');
 
         if (token) {
             request = request.clone({

@@ -48,18 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.subscription = this.translate
             .onLangChange()
             .subscribe(() => this.setLanguages());
-        this.getSampleBackend();
-        this.getSampleMiddleware();
-    }
-    getSampleMiddleware() {
-        this.tempDocService.getSampleMiddleware(1).subscribe(res => {
-            console.log('RESPONSE FROM MIDDLEWARE', res);
-        });
-    }
-    getSampleBackend() {
-        this.tempDocService.getSampleBackend(1).subscribe(res => {
-            console.log('RESPONSE FROM BACKEND', res);
-        });
+
         this.router.events
             .pipe(filter(e => e instanceof NavigationEnd))
             .subscribe(() => {
@@ -99,11 +88,11 @@ export class AppComponent implements OnInit, OnDestroy {
         const elems = [];
         elems.push({
             value: 'en',
-            text: this.translate.instant('PPR_LANGUAGES_EN')
+            text: this.translate.instant('ENGLISH')
         });
         elems.push({
             value: 'es',
-            text: this.translate.instant('PPR_LANGUAGES_ES')
+            text: this.translate.instant('SPANISH')
         });
 
         this.languages$ = of(elems);

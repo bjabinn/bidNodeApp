@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { User } from '@bid/bid-api-service';
 import { Role } from '@bid/bid-api-service';
+import { BidStorageService } from '@bid/bid-utils';
 
 @Injectable({
     providedIn: 'root'
@@ -10,18 +11,21 @@ import { Role } from '@bid/bid-api-service';
 export class UserService {
     private userInfo;
 
-    constructor(private route: Router) {}
+    constructor(
+        private route: Router,
+        private bidStorageSvc: BidStorageService
+    ) {}
 
     public setUser(user: User, mustSave: boolean) {
         this.reset();
         this.userInfo = user;
         if (mustSave) {
-            localStorage.setItem('currentUser', JSON.stringify(this.userInfo));
+            this.bidStorageSvc.set('currentUser', this.userInfo);
         }
     }
 
     public getUser(): User {
-        const user = JSON.parse(localStorage.getItem('currentUser'));
+        const user = this.bidStorageSvc.get('currentUser');
         return user || this.userInfo || {};
     }
 
@@ -36,6 +40,6 @@ export class UserService {
 
     private reset() {
         this.userInfo = null;
-        localStorage.removeItem('currentUser');
+        this.bidStorageSvc.delete('currentUser');
     }
 }

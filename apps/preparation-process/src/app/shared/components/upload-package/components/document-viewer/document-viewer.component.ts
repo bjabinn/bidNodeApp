@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DocumentModel } from '@bid/pp/app/core/models/document.model';
+import { DocumentModel } from '@bid/bid-api-service';
 import { BehaviorSubject } from 'rxjs';
 import { FileRestrictions } from '@progress/kendo-angular-upload';
 

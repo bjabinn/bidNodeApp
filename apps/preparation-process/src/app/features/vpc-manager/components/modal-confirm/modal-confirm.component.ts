@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { environment } from '@bid/pp/environments/environment';
 
 @Component({
     selector: 'bid-modal-confirm',
@@ -9,12 +10,25 @@ export class ModalConfirmComponent implements OnInit {
     @Input() opened: boolean;
     @Input() title: string;
     @Input() confirm: string;
-    @Output() closed = new EventEmitter<boolean>();
+    @Input() return = false;
+    @Output() closed = new EventEmitter<object>();
+    public comments: string;
+    public textAreaLimit: number;
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.textAreaLimit =
+            environment.stepsConf.uploadPackage.maxCommentLength;
+    }
 
     close(submit: boolean) {
-        this.closed.emit(submit);
+        const res = {
+            submit: submit,
+            comments: null
+        };
+        if (this.return) {
+            res.comments = this.comments;
+        }
+        this.closed.emit(res);
     }
 }

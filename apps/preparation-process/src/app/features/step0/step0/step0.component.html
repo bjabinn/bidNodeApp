@@ -1,27 +1,7 @@
-<section class="container-fluid" *ngIf="initialProcess">
-    <div class="row">
-        <div class="col-12">
-            <div
-                class="t-padding-top-xxxlarge t-padding-bottom-small t-text-align-center"
-            >
-                <h1
-                    class="h1 t-padding-bottom-xxxlarge"
-                    [innerHTML]="'PPR_STEPZERO_TITLE' | translate"
-                ></h1>
-                <p
-                    class="t-padding-bottom-xxxlarge"
-                    [innerHTML]="'PPR_STEPZERO_SUBTITLE' | translate"
-                ></p>
-                <a
-                    class="btn btn-footer"
-                    href="#"
-                    (click)="startProcess($event)"
-                    alt=""
-                    class="btn btn-footer"
-                    [innerHTML]="'PPR_STEPZERO_SUBMIT' | translate"
-                >
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+<bid-modal-confirm
+    [opened]="initialProcess"
+    [title]="'PPR_STEPZERO_TITLE' | translate"
+    [confirm]="confirmButton | translate"
+    [hasTemplate]="hasTemplate"
+    (closed)="startProcess(hasTemplate)"
+></bid-modal-confirm>

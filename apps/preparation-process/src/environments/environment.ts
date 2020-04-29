@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    stepsUrl: 'http://localhost:3333/api',
+    middlewareUrl: 'http://localhost:3333/api',
     azureUrl: 'https://bidtest.blob.core.windows.net/',
     translateUrl:
         'https://1d138116-9824-427e-97b5-e6be2ea5cb8e.mock.pstmn.io/lang',
@@ -22,7 +22,8 @@ export const environment = {
             dateFormat: 'dd MMM yyyy',
             documentType: 'PPR',
             documentVersion: 'ERM',
-            languages: ['es', 'en', 'pt', 'fr']
+            languages: ['es', 'en', 'pt', 'fr'],
+            maxCommentLength: 8000
         }
     }
 };

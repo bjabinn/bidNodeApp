@@ -3,7 +3,11 @@
         <div class="col-12">
             <div class="panelbar-wrapper">
                 <kendo-panelbar>
-                    <kendo-panelbar-item [title]="'DOCUMENTS'" expanded="true">
+                    <kendo-panelbar-item
+                        data-literal="PPR_UPLOADDOCUMENT_SECTIONTITLE"
+                        [title]="'PPR_UPLOADDOCUMENT_SECTIONTITLE' | translate"
+                        expanded="true"
+                    >
                         <ng-template kendoPanelBarContent>
                             <div
                                 *ngIf="
@@ -46,7 +50,8 @@
 
 <ng-template #uploadZone>
     <bid-modal-dialog
-        [modalTitle]="'Upload Document'"
+        data-literal="PPR_UPLOADDOCUMENT_MODALUPLOAD"
+        [modalTitle]="'PPR_UPLOADDOCUMENT_MODALUPLOAD' | translate"
         [limit]="limit"
         [documentRestriction]="documentRestriction"
         [readonly]="readonly"

@@ -1,5 +1,5 @@
 <kendo-dialog
-    title="{{ title }}"
+    title="{{ 'PPR_UPLOADPACKAGE_CONFIRMTITLE' | translate }}"
     *ngIf="opened"
     (close)="close(false)"
     [minWidth]="250"
@@ -7,22 +7,19 @@
     [minHeight]="340"
 >
     <p>
-        <strong class="font-weight-bold"
-            >Would you like to submit the document "Name of the document" to the
-            Division Chief for Validation?</strong
-        >
+        <strong class="font-weight-bold">{{
+            'PPR_UPLOADPACKAGE_CONFIRMTEXT1' | translate: paramTrans
+        }}</strong>
     </p>
     <p>
-        The Division Chief will be notified and as soon as the document is
-        Aproved or Rejected, you will recieve an email and Convergence
-        notification
+        {{ 'PPR_UPLOADPACKAGE_CONFIRMTEXT2' | translate }}
     </p>
     <kendo-dialog-actions layout="normal">
         <button kendoButton (click)="close(false)" class="btn btn-link">
-            Cancel
+            {{ 'CANCEL' | translate }}
         </button>
         <button kendoButton (click)="close(true)" primary="true">
-            {{ confirm }}
+            {{ 'PPR_UPLOADPACKAGE_CONFIRMBTN' | translate }}
         </button>
     </kendo-dialog-actions>
 </kendo-dialog>

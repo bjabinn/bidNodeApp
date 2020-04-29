@@ -5,94 +5,78 @@ import {
     Output,
     EventEmitter,
     OnChanges,
-    SimpleChange,
-    OnDestroy
+    SimpleChange
 } from '@angular/core';
 import { LanguageModel } from '@bid/bid-api-service';
-import { BidTranslateService } from '@bid/bid-translate';
-
-import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'bid-select-language',
     templateUrl: './select-language.component.html',
     styles: []
 })
-export class SelectLanguageComponent implements OnInit, OnChanges, OnDestroy {
+export class SelectLanguageComponent implements OnInit, OnChanges {
     @Input() selected: string;
     @Input() languages: string[];
     @Input() readonly: boolean;
     @Output() langSelect = new EventEmitter<string>();
 
     public languageModelList: LanguageModel[] = [];
-    private allLanguages: LanguageModel[];
-    private subscription: Subscription;
 
-    constructor(private translate: BidTranslateService) {
-        const lang_es: LanguageModel = new LanguageModel();
-        lang_es.id = 'es';
-        lang_es.code = 'ESP';
-        lang_es.name = this.translate.instant('PPR_LANGUAGES_ES');
-        lang_es.selected = false;
-
-        const lang_en: LanguageModel = new LanguageModel();
-        lang_en.id = 'en';
-        lang_en.code = 'ENG';
-        lang_en.name = this.translate.instant('PPR_LANGUAGES_EN');
-        lang_en.selected = false;
-
-        const lang_pt: LanguageModel = new LanguageModel();
-        lang_pt.id = 'pt';
-        lang_pt.code = 'POR';
-        lang_pt.name = this.translate.instant('PPR_LANGUAGES_PT');
-        lang_pt.selected = false;
-
-        const lang_fr: LanguageModel = new LanguageModel();
-        lang_fr.id = 'fr';
-        lang_fr.code = 'FRA';
-        lang_fr.name = this.translate.instant('PPR_LANGUAGES_FR');
-        lang_fr.selected = false;
-
-        this.allLanguages = [lang_es, lang_en, lang_pt, lang_fr];
-        this.subscription = this.translate.onLangChange().subscribe(() => {
-            const langs = {};
-
-            langs['en'] = this.translate.instant('PPR_LANGUAGES_EN');
-            langs['es'] = this.translate.instant('PPR_LANGUAGES_ES');
-            langs['fr'] = this.translate.instant('PPR_LANGUAGES_FR');
-            langs['pt'] = this.translate.instant('PPR_LANGUAGES_PT');
-
-            Object.keys(langs).forEach(key => {
-                this.allLanguages.filter(elem => elem.id === key).pop().name =
-                    langs[key];
-            });
-        });
-    }
+    constructor() {}
 
     ngOnInit(): void {
-        this.languageModelList = this.allLanguages.filter(
-            elem => this.languages.indexOf(elem.id) !== -1
-        );
+        this.initLanguages();
     }
-    ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
-        if (
-            changes.selected &&
-            !changes.selected.firstChange &&
-            changes.selected.currentValue !== changes.selected.previousValue
-        ) {
-            const newSelected = changes.selected.currentValue;
-            this.languageModelList.forEach(
-                lang => (lang.selected = lang.id === newSelected.toLowerCase())
-            );
-        }
+    ngOnChanges(changes: { [propKey: string]: SimpleChange }): void {
+        this.changeInputSelected(changes.selected);
     }
 
-    selectLanguage(event: boolean, language: LanguageModel) {
+    public selectLanguage(event: boolean, language: LanguageModel): void {
         language.selected = event;
         if (event) this.langSelect.emit(language.id);
     }
 
-    ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+    private initLanguages(): void {
+        const langEs: LanguageModel = new LanguageModel();
+        langEs.id = 'es';
+        langEs.code = 'ESP';
+        langEs.name = 'SPANISH';
+        langEs.selected = false;
+
+        const langEn: LanguageModel = new LanguageModel();
+        langEn.id = 'en';
+        langEn.code = 'ENG';
+        langEn.name = 'ENGLISH';
+        langEn.selected = false;
+
+        const langPt: LanguageModel = new LanguageModel();
+        langPt.id = 'pt';
+        langPt.code = 'POR';
+        langPt.name = 'PORTUGUESE';
+        langPt.selected = false;
+
+        const langFr: LanguageModel = new LanguageModel();
+        langFr.id = 'fr';
+        langFr.code = 'FRA';
+        langFr.name = 'FRENCH';
+        langFr.selected = false;
+
+        const allLanguages: LanguageModel[] = [langEs, langEn, langPt, langFr];
+
+        this.languageModelList = allLanguages.filter(
+            elem => this.languages.indexOf(elem.id) !== -1
+        );
+    }
+
+    private changeInputSelected(selected: SimpleChange): void {
+        if (
+            !selected.firstChange &&
+            selected.currentValue !== selected.previousValue
+        ) {
+            const newSelected = selected.currentValue;
+            this.languageModelList.forEach(
+                lang => (lang.selected = lang.id === newSelected.toLowerCase())
+            );
+        }
     }
 }

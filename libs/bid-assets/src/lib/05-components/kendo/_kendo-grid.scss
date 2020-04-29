@@ -9,7 +9,6 @@
 /// @since version 1.0.0
 ////
 .k-grid {
-
     &--list {
         border: none;
 
@@ -22,12 +21,17 @@
                 width: 100%;
                 &__wrapper {
                     width: 100%;
+                    display: flex;
 
-                    &>* {
+                    & > * {
                         display: inline-block;
                     }
+                    &:first-child {
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                    }
                     &:last-child {
-                        text-align: right;
+                        justify-content: flex-end;
                     }
                 }
                 &__operation-label {
@@ -51,7 +55,8 @@
                 color: color('white');
                 font-weight: bold;
                 .k-icon {
-                    &.k-i-sort-desc-sm, &.k-i-sort-asc-sm {
+                    &.k-i-sort-desc-sm,
+                    &.k-i-sort-asc-sm {
                         color: color('white');
                     }
                 }
@@ -85,7 +90,7 @@
             padding-top: rem(13);
             padding-bottom: rem(13);
         }
-        .k-button-icontext{
+        .k-button-icontext {
             padding: rem(0);
             &::before {
                 background-color: transparent;
@@ -103,7 +108,105 @@
             vertical-align: bottom;
             &::before {
                 content: '\f2ed';
-                font-family: "Font Awesome 5 Pro";
+                font-family: 'Font Awesome 5 Pro';
+            }
+        }
+    }
+    &--grey {
+        .k-grid {
+            &-header {
+                background-color: color('gray-200');
+                color: color('black');
+                font-weight: bold;
+                padding: 0 !important;
+                .k-header {
+                    border: none;
+                }
+                .k-icon {
+                    vertical-align: middle !important;
+                    &.k-i-sort-desc-sm,
+                    &.k-i-sort-asc-sm {
+                        color: color('primary');
+                    }
+                }
+                &-wrap {
+                    border: none;
+                }
+            }
+            &-content {
+                overflow: auto;
+            }
+        }
+        tr {
+            &.k-alt {
+                background-color: color('gray-100');
+            }
+            &.k-filter-row {
+                display: none;
+                td {
+                    padding: rem(10) rem(40) !important;
+                }
+            }
+            td {
+                padding: rem(15) rem(40) !important;
+                vertical-align: top;
+            }
+            th {
+                padding: rem(10) rem(40) !important;
+                &.k-header > .k-link {
+                    display: flex;
+                    align-items: center;
+                    padding-right: rem(10) !important;
+                    [aria-label='Sortable'] {
+                        padding: rem(17) 0;
+                        min-width: rem(15);
+                        margin-left: rem(7);
+                        display: block;
+                        height: rem(47);
+                        text-align: center;
+                    }
+                    kendo-daterange {
+                        max-width: 84%;
+                        label {
+                            width: 50%;
+                            input {
+                                min-width: 100%;
+                            }
+                            .k-dateinput {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    input {
+                        max-width: 80%;
+                    }
+                    strong {
+                        padding: rem(14) 0;
+                        text-transform: capitalize;
+                    }
+                    button {
+                        padding: rem(14);
+                        padding-right: rem(18);
+                        justify-self: flex-end;
+                        position: absolute;
+                        right: 0;
+                    }
+                    :nth-child(1) {
+                        order: 1;
+                    }
+                    :nth-child(2) {
+                        order: 3;
+                    }
+                    :nth-child(3) {
+                        order: 2;
+                    }
+                    :nth-child(4) {
+                        order: 5;
+                    }
+                    :nth-child(5) {
+                        order: 4;
+                    }
+                }
             }
         }
     }
