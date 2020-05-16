@@ -1,0 +1,155 @@
+////
+/// Colors variable
+///
+/// You must put all colors here and name them.
+/// @access public
+/// @author Dfront Specialist Team
+/// @example scss color:color(primary);
+///    color : #007bff;
+/// @group Settings
+/// @name color-map
+/// @see $color
+/// @since version 1.0.0
+/// @type Map
+////
+$primary: #2c6ac0;
+$secondary: #eaf0f9;
+$secondary-disabled: #2c6ac0;
+$tertiary: #6d6d6d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: rgba(255, 0, 1, 0.1);
+$danger: #dc3545;
+$transparent: rgba(0, 0, 0, 0);
+$gray-800: #333333;
+$gray-700: #4f4f4f;
+$gray-600: #6c757d;
+$gray-500: #cccccc;
+$gray-400: #f2f4f6;
+$gray-300: #f7f9ff;
+$gray-200: #f3f3f3;
+$gray-100: #f8f9fa;
+$black: #000000;
+$white: #fff;
+$yellow: #f8c512;
+$orange: #ff5c00;
+$primary-lighter: #eaf0f9;
+$primary-light: #3288ff;
+$primary-dark: #2559a1;
+$primary-darker: #234068;
+$purple: #7432b3;
+$purple-light: #e4c4f0;
+$blue: #2fa9dd;
+$blue-bg-500: #d2dbe9;
+$blue-bg-400: #e2ebf1;
+$blue-bg-300: #eaf0f9;
+$blue-bg-200: #eef2f5;
+$gray-bg: #969fab;
+$green: #23c159;
+$red: #d30001;
+$colors: map-merge(
+    $colors,
+    (
+        // // Project
+            'primary': $primary,
+        'secondary': $secondary,
+        'tertiary': $tertiary,
+        'danger': $danger,
+        'success': $success,
+        'info': $info,
+        'warning': $warning,
+        'light': $light,
+        'dark': $dark,
+        'main': #252d32,
+        // ns-white	   	 	:	#ffffff,
+            'black': $black,
+        'white': $white,
+        'yellow': $yellow,
+        'disabled': #e9ecef,
+        'gray-800': $gray-800,
+        'gray-700': $gray-700,
+        'gray-600': $gray-600,
+        'gray-500': $gray-500,
+        'gray-400': $gray-400,
+        'gray-300': $gray-300,
+        'gray-200': $gray-200,
+        'gray-100': $gray-100,
+        'pruple': $purple,
+        'purple-light': $purple-light,
+        'blue-bg-500': $blue-bg-500,
+        'blue-bg-400': $blue-bg-400,
+        'blue-bg-300': $blue-bg-300,
+        'blue-bg-200': $blue-bg-200,
+        'gray-bg': $gray-bg,
+        'green': $green,
+        'red': $red,
+        // // Default
+            // default-lighter		:	#e2e3e5,
+            // default-light		:	#d6d8db,
+            // default				:	#6c757d,
+            // default-darker		:	#545b62,
+            // // Primary
+            'primary-lighter': $primary-lighter,
+        'primary-light': $primary-light,
+        // primary				:	#007bff,
+            'primary-dark': $primary-dark,
+        'primary-darker': $primary-darker,
+        // // Success
+            // success-lighter		:	#d4edda,
+            // success-light		:	#c3e6cb,
+            // success				:	#28a745,
+            // success-dark		:	#218838,
+            // success-darker		:	#1e7e34,
+            // // Danger
+            // danger-lighter		:	#f8d7da,
+            // danger-light		:	#f5c6cb,
+            // danger				:	#dc3545,
+            // danger-dark			:	#c82333,
+            // danger-darker		:	#bd2130,
+            // // Warning
+            'warning-lighter': #faf2cc,
+        'warning-light': #faf2cc,
+        'warning-dark': #8a6d3b,
+        // warning-darker		:	#d39e00,
+            // // Info
+            // info-lighter		:	#d1ecf1,
+            // info-light			:	#bee5eb,
+            // info				:	#17a2b8,
+            // info-dark			:	#138496,
+            // info-darker			:	#117a8b,
+            // // Darken
+            // darken-lighter		:	#d6d8d9,
+            // darken-light		:	#c6c8ca,
+            // darken				:	#343a40,
+            // darken-dark			:	#23272b,
+            // darken-darker		:	#1d2124
+    )
+);
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        'primary': $primary,
+        'secondary': $secondary,
+        'success': $success,
+        'info': $info,
+        'warning': $warning,
+        'danger': $danger,
+        'light': $light,
+        'dark': $dark
+    )
+);
+
+$grays: map-merge(
+    $grays,
+    (
+        '100': $gray-100,
+        '200': $gray-200,
+        '300': $gray-300,
+        '400': $gray-400,
+        '500': $gray-500,
+        '600': $gray-600,
+        '700': $gray-700,
+        '800': $gray-800,
+        '900': $gray-900
+    )
+);

@@ -1,0 +1,42 @@
+////
+/// Override kendo-switch component
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of kendo ui
+/// @name .k-switch
+/// @since version 1.0.0
+////
+.k-switch {
+
+    &--big {
+        width: rem(153);
+        height: rem(42);
+
+        .k-switch-handle {
+            width: rem(74);
+            height: rem(42);
+        }
+
+        &.k-switch-on {
+            .k-switch-container {
+                background-color: color('green');
+            }
+            .k-switch-handle {
+                left: calc(100% - 74px);
+            }
+        }
+
+        .k-switch-label-on {
+            font-size: rem(16);
+            font-weight: bold;
+            left: rem(28);
+        }
+        .k-switch-label-off {
+            font-size: rem(16);
+            font-weight: bold;
+            right: rem(28);
+        }
+    }
+}

@@ -1,0 +1,666 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bid documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">bid documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ModalsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>apps/showcase/src/app/components/old-style-guide/modals/modals.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>bid-modals</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./modals.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/showcase/src/app/components/old-style-guide/modals/modals.component.ts:7</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="11"
+                            class="link-to-prism">apps/showcase/src/app/components/old-style-guide/modals/modals.component.ts:11</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;bid-modals&#x27;,
+  templateUrl: &#x27;./modals.component.html&#x27;
+})
+export class ModalsComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;&lt;strong&gt;Modals&lt;/strong&gt;&lt;/p&gt;
+
+&lt;a data-toggle&#x3D;&quot;modal&quot; href&#x3D;&quot;#errormodal&quot; class&#x3D;&quot;btn&quot; style&#x3D;&quot;background: #FF0001;&quot;&gt;Modal Error&lt;/a&gt;
+&lt;a data-toggle&#x3D;&quot;modal&quot; href&#x3D;&quot;#successmodal&quot; class&#x3D;&quot;btn&quot; style&#x3D;&quot;background: #23D98C;&quot;&gt;Modal Success&lt;/a&gt;
+&lt;a data-toggle&#x3D;&quot;modal&quot; href&#x3D;&quot;#iconmodal&quot; class&#x3D;&quot;btn&quot;&gt;Modal Iconized&lt;/a&gt;
+
+&lt;!--Modals--&gt;
+
+&lt;!-- Modal Generate reports --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;generatereport&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;generatereport&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Generate report&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                You are about to generate in COGNOS &lt;strong&gt;596 reports of the Cycle &quot;Second Period Jan-Jun
+                    2019&quot;.&lt;/strong&gt; This action is irreversible.&lt;br /&gt;&lt;br /&gt; Generate reports?
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; id&#x3D;&quot;subRepor&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Yes, generate
+                    reports&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Generate report individual --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;generatereport1&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;generatereport1&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Generate report&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                You are about to generate in COGNOS the reports of the &lt;strong&gt;operation AR-G1017 of the Cycle
+                    &quot;Second Period Jan-Jun 2019&quot;.&lt;/strong&gt; This action is irreversible.&lt;br /&gt;&lt;br /&gt; Generate reports?
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Yes, generate report&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Disclose reports --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;disclosereport&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;disclosereport&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Disclose reports&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                You are about to disclose &lt;strong&gt;596 reports of the Cycle &quot;Second Period Jan-Jun 2019&quot;.&lt;/strong&gt; This action is irreversible.&lt;br /&gt;&lt;br /&gt; Disclose reports?
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Yes, disclose reports&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Disclose reports individual--&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;disclosereport1&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;disclosereport1&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Disclose report&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                You are about to disclose the report of the&lt;strong&gt;operation AR-G1017 of the Cycle &quot;Second Period
+                    Jan-Jun 2019&quot;.&lt;/strong&gt; This action is irreversible.&lt;br /&gt;&lt;br /&gt; Disclose report?
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Yes, disclose report&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Manually Upload reports --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;manuallyupload&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;manuallyupload&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Manually upload to Ezshare&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                You are about to manually upload to Ezshare the report of the operation &lt;strong&gt;“AR-G1002” of the
+                    Cycle &quot;Second Period Jan-Jun 2019&quot;.&lt;/strong&gt; This action is irreversible.
+                &lt;div class&#x3D;&quot;rounded upload-box text-center mt-4&quot;&gt;
+                    &lt;p&gt;Drag File Here or &lt;a href&#x3D;&quot;#&quot;&gt;Browse&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Upload to Ezshare&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Error log --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;errorlog&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;errorlog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Error log&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                The operation &lt;strong&gt;CO-L1180 of the Cycle &quot;Second Period Jun-Dec 2019&quot;&lt;/strong&gt; had an error while it was in the process of publication:&lt;br /&gt;
+                &lt;section class&#x3D;&quot;mt-3&quot;&gt;
+                    &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
+                        &lt;thead class&#x3D;&quot;header-table font-weight-bold&quot;&gt;
+                            &lt;tr&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;Datatime &lt;/th&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;Log &lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;12:00&lt;/td&gt;
+                                &lt;td&gt;COGNOS generate report&lt;/td&gt;
+
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;12:05&lt;/td&gt;
+                                &lt;td&gt;Upload to Ezshare&lt;/td&gt;
+
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;12:07&lt;/td&gt;
+                                &lt;td&gt;Database error while uploading report&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cancel&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Retry&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Log of disclosed reports --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;reportslog&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;reportslog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header d-block&quot;&gt;
+                &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+                    &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Operation CO-L1180&lt;/h5&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;h6 class&#x3D;&quot;font-weight-normal&quot;&gt;Institutions for Development / Competitiveness, Technology and Innovation
+                &lt;/h6&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body container-fluid&quot;&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                    &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;Operation Type:&lt;/strong&gt; &lt;br&gt;LON&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;Country:&lt;/strong&gt;&lt;br&gt;Colombia&lt;/div&gt;
+                        &lt;div&gt;&lt;strong&gt;Country Department:&lt;/strong&gt;&lt;br&gt; Andean Group&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;Modality:&lt;/strong&gt;&lt;br&gt; LBR (Loan Based on Resuls)&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;Division:&lt;/strong&gt;&lt;br&gt; CSD/RND &lt;/div&gt;
+                        &lt;div&gt;&lt;strong&gt;Sector department:&lt;/strong&gt; &lt;br&gt;CSD&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;PMR Validation Stage:&lt;/strong&gt;&lt;br&gt; Completed by Team Leader&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-2&quot;&gt;&lt;strong&gt;Operation Role in PMR:&lt;/strong&gt;&lt;br&gt; Parent&lt;/div&gt;
+                        &lt;div&gt;&lt;strong&gt;División:&lt;/strong&gt;&lt;br&gt; &lt;a href&#x3D;&quot;#&quot;&gt;AR-1092&lt;/a&gt;,&lt;a href&#x3D;&quot;#&quot;&gt;AR-1091&lt;/a&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;section class&#x3D;&quot;mt-3&quot;&gt;
+                    &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
+                        &lt;thead class&#x3D;&quot;header-table font-weight-bold&quot;&gt;
+                            &lt;tr&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;PMR Cycle &amp;nbsp;&lt;i class&#x3D;&quot;fas fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;Report ID &amp;nbsp;&lt;i class&#x3D;&quot;fas fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;Disclosure date &amp;nbsp;&lt;i class&#x3D;&quot;fas fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                                &lt;th scope&#x3D;&quot;col&quot;&gt;Disclosed by&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;First Period Jan-Jun 2019&lt;/td&gt;
+                                &lt;td&gt;&lt;a href&#x3D;&quot;#&quot;&gt;EZSHARE-1916510350-38&lt;/a&gt;&lt;/td&gt;
+                                &lt;td&gt;10/01/19 &lt;/td&gt;
+                                &lt;td&gt;Juansebastian&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;Second Period Jun-Dec 2018&lt;/td&gt;
+                                &lt;td&gt;&lt;a href&#x3D;&quot;#&quot;&gt;EZSHARE-1916510350-38&lt;/a&gt;&lt;/td&gt;
+                                &lt;td&gt;09/07/18 &lt;/td&gt;
+                                &lt;td&gt;Marianojose&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;First Period Jan-Jun 2018&lt;/td&gt;
+                                &lt;td&gt;&lt;a href&#x3D;&quot;#&quot;&gt;EZSHARE-1916510350-38&lt;/a&gt;&lt;/td&gt;
+                                &lt;td&gt;10/01/18 &lt;/td&gt;
+                                &lt;td&gt;Carloshurtado&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;col-sm-4&quot;&gt;
+    &lt;div id&#x3D;&quot;toastPublish&quot; class&#x3D;&quot;toast&quot; role&#x3D;&quot;alert&quot; aria-live&#x3D;&quot;assertive&quot; aria-atomic&#x3D;&quot;true&quot; data-autohide&#x3D;&quot;false&quot;&gt;
+
+        &lt;div class&#x3D;&quot;toast-body green&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;toast&quot; style&#x3D;&quot;color: white;&quot;&gt;&amp;times;&lt;/button&gt;
+            &lt;h3 class&#x3D;&quot;text-center m-0&quot; style&#x3D;&quot;color:white;font-size: 1rem;&quot;&gt;
+                ¡Publishing Reports!&lt;/h3&gt;
+            &lt;p class&#x3D;&quot;text-center&quot;&gt; 56 operations have started to publish&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;!--DL Modals--&gt;
+
+&lt;!-- Modal Error --&gt;
+&lt;div class&#x3D;&quot;modal fade modal_error&quot; id&#x3D;&quot;errormodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;errormodal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Cancel Extension Request&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Success --&gt;
+&lt;div class&#x3D;&quot;modal fade modal_success&quot; id&#x3D;&quot;successmodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;successmodal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Cancel Extension Request&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Iconized --&gt;
+&lt;div class&#x3D;&quot;modal fade modal_icon&quot; id&#x3D;&quot;iconmodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;iconmodal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;&lt;i class&#x3D;&quot;fas fa-info-circle&quot;&gt;&lt;/i&gt; Cancel Extension Request&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Expanded --&gt;
+&lt;div class&#x3D;&quot;modal fade modal_expanded&quot; id&#x3D;&quot;expandedmodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;expandedmodal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Comment By - Name of user&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                &lt;textarea&gt;Etiam non fermentum justo. Praesent ex turpis, lacinia cursus erat vel, dictum iaculis augue. Vestibulum et bibendum eros, sit amet bibendum metus. Duis suscipit quam eu maximus auctor. Nunc condimentum eu magna eu elementum. Praesent iaculis ultrices tortor et ullamcorper. Praesent arcu quam, maximus quis nunc nec, dignissim convallis quam. Nunc id commodo nisi. Curabitur imperdiet vehicula dui sodales facilisis. Aliquam ac consectetur arcu. Nullam vel nunc lacus. Mauris consectetur luctus accumsan. Aliquam pellentesque, ante a sagittis interdum, lorem nisi iaculis arcu, ut vestibulum augue sapien nec ante. Nunc vel tempus dolor. Etiam pharetra elementum ipsum, iaculis vulputate nulla auctor vel. Vivamus ac ex molestie, pharetra nunc nec, venenatis metus. Fusce at nisl erat. Aenean id maximus libero. Nulla suscipit nec nisl eu dictum. Nunc at sem non urna fermentum laoreet. Pellentesque feugiat justo a neque pellentesque, eget imperdiet nisi suscipit. Fusce orci risus, convallis vitae condimentum ac, malesuada eget augue. Suspendisse ut molestie libero. Nam molestie rhoncus arcu at fermentum. Fusce euismod ullamcorper massa pharetra aliquet. Pellentesque eget urna quam. In in rutrum lorem, at viverra sem. Duis molestie rutrum augue id tristique. Morbi erat magna, pellentesque at ullamcorper dictum, feugiat id massa. Sed pretium elementum gravida. Duis porta lorem ac maximus feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam quis mollis ex. In non malesuada elit, sed feugiat dui. Nam facilisis nunc eu urna volutpat, a dictum quam ultrices&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p><strong>Modals</strong></p><a data-toggle="modal" href="#errormodal" class="btn" style="background: #FF0001;">Modal Error</a><a data-toggle="modal" href="#successmodal" class="btn" style="background: #23D98C;">Modal Success</a><a data-toggle="modal" href="#iconmodal" class="btn">Modal Iconized</a><!--Modals--><!-- Modal Generate reports --><div class="modal fade" id="generatereport" tabindex="-1" role="dialog" aria-labelledby="generatereport" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Generate report</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                You are about to generate in COGNOS <strong>596 reports of the Cycle "Second Period Jan-Jun                    2019".</strong> This action is irreversible.<br /><br /> Generate reports?            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary" id="subRepor" data-dismiss="modal">Yes, generate                    reports</button>            </div>        </div>    </div></div><!-- Modal Generate report individual --><div class="modal fade" id="generatereport1" tabindex="-1" role="dialog" aria-labelledby="generatereport1" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Generate report</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                You are about to generate in COGNOS the reports of the <strong>operation AR-G1017 of the Cycle                    "Second Period Jan-Jun 2019".</strong> This action is irreversible.<br /><br /> Generate reports?            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary">Yes, generate report</button>            </div>        </div>    </div></div><!-- Modal Disclose reports --><div class="modal fade" id="disclosereport" tabindex="-1" role="dialog" aria-labelledby="disclosereport" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Disclose reports</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                You are about to disclose <strong>596 reports of the Cycle "Second Period Jan-Jun 2019".</strong> This action is irreversible.<br /><br /> Disclose reports?            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary">Yes, disclose reports</button>            </div>        </div>    </div></div><!-- Modal Disclose reports individual--><div class="modal fade" id="disclosereport1" tabindex="-1" role="dialog" aria-labelledby="disclosereport1" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Disclose report</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                You are about to disclose the report of the<strong>operation AR-G1017 of the Cycle "Second Period                    Jan-Jun 2019".</strong> This action is irreversible.<br /><br /> Disclose report?            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary">Yes, disclose report</button>            </div>        </div>    </div></div><!-- Modal Manually Upload reports --><div class="modal fade" id="manuallyupload" tabindex="-1" role="dialog" aria-labelledby="manuallyupload" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Manually upload to Ezshare</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                You are about to manually upload to Ezshare the report of the operation <strong>“AR-G1002” of the                    Cycle "Second Period Jan-Jun 2019".</strong> This action is irreversible.                <div class="rounded upload-box text-center mt-4">                    <p>Drag File Here or <a href="#">Browse</a></p>                </div>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary">Upload to Ezshare</button>            </div>        </div>    </div></div><!-- Modal Error log --><div class="modal fade" id="errorlog" tabindex="-1" role="dialog" aria-labelledby="errorlog" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Error log</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                The operation <strong>CO-L1180 of the Cycle "Second Period Jun-Dec 2019"</strong> had an error while it was in the process of publication:<br />                <section class="mt-3">                    <table class="table table-striped">                        <thead class="header-table font-weight-bold">                            <tr>                                <th scope="col">Datatime </th>                                <th scope="col">Log </th>                            </tr>                        </thead>                        <tbody>                            <tr>                                <td>12:00</td>                                <td>COGNOS generate report</td>                            </tr>                            <tr>                                <td>12:05</td>                                <td>Upload to Ezshare</td>                            </tr>                            <tr>                                <td>12:07</td>                                <td>Database error while uploading report</td>                            </tr>                        </tbody>                    </table>                </section>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>                <button type="button" class="btn btn-primary">Retry</button>            </div>        </div>    </div></div><!-- Modal Log of disclosed reports --><div class="modal fade" id="reportslog" tabindex="-1" role="dialog" aria-labelledby="reportslog" aria-hidden="true">    <div class="modal-dialog modal-lg" role="document">        <div class="modal-content">            <div class="modal-header d-block">                <div class="d-flex">                    <h5 class="modal-title">Operation CO-L1180</h5>                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">                        <span aria-hidden="true">&times;</span>                    </button>                </div>                <h6 class="font-weight-normal">Institutions for Development / Competitiveness, Technology and Innovation                </h6>            </div>            <div class="modal-body container-fluid">                <div class="row">                    <div class="col-sm-4">                        <div class="mb-2"><strong>Operation Type:</strong> <br>LON</div>                        <div class="mb-2"><strong>Country:</strong><br>Colombia</div>                        <div><strong>Country Department:</strong><br> Andean Group</div>                    </div>                    <div class="col-sm-4">                        <div class="mb-2"><strong>Modality:</strong><br> LBR (Loan Based on Resuls)</div>                        <div class="mb-2"><strong>Division:</strong><br> CSD/RND </div>                        <div><strong>Sector department:</strong> <br>CSD</div>                    </div>                    <div class="col-sm-4">                        <div class="mb-2"><strong>PMR Validation Stage:</strong><br> Completed by Team Leader</div>                        <div class="mb-2"><strong>Operation Role in PMR:</strong><br> Parent</div>                        <div><strong>División:</strong><br> <a href="#">AR-1092</a>,<a href="#">AR-1091</a></div>                    </div>                </div>                <section class="mt-3">                    <table class="table table-striped">                        <thead class="header-table font-weight-bold">                            <tr>                                <th scope="col">PMR Cycle &nbsp;<i class="fas fa-sort"></i></th>                                <th scope="col">Report ID &nbsp;<i class="fas fa-sort"></i></th>                                <th scope="col">Disclosure date &nbsp;<i class="fas fa-sort"></i></th>                                <th scope="col">Disclosed by</th>                            </tr>                        </thead>                        <tbody>                            <tr>                                <td>First Period Jan-Jun 2019</td>                                <td><a href="#">EZSHARE-1916510350-38</a></td>                                <td>10/01/19 </td>                                <td>Juansebastian</td>                            </tr>                            <tr>                                <td>Second Period Jun-Dec 2018</td>                                <td><a href="#">EZSHARE-1916510350-38</a></td>                                <td>09/07/18 </td>                                <td>Marianojose</td>                            </tr>                            <tr>                                <td>First Period Jan-Jun 2018</td>                                <td><a href="#">EZSHARE-1916510350-38</a></td>                                <td>10/01/18 </td>                                <td>Carloshurtado</td>                            </tr>                        </tbody>                    </table>                </section>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>            </div>        </div>    </div></div><div class="col-sm-4">    <div id="toastPublish" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">        <div class="toast-body green">            <button type="button" class="close" data-dismiss="toast" style="color: white;">&times;</button>            <h3 class="text-center m-0" style="color:white;font-size: 1rem;">                ¡Publishing Reports!</h3>            <p class="text-center"> 56 operations have started to publish</p>        </div>    </div></div><!--DL Modals--><!-- Modal Error --><div class="modal fade modal_error" id="errormodal" tabindex="-1" role="dialog" aria-labelledby="errormodal" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Cancel Extension Request</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">            </div>            <div class="modal-footer">                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>            </div>        </div>    </div></div><!-- Modal Success --><div class="modal fade modal_success" id="successmodal" tabindex="-1" role="dialog" aria-labelledby="successmodal" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Cancel Extension Request</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">            </div>            <div class="modal-footer">                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>            </div>        </div>    </div></div><!-- Modal Iconized --><div class="modal fade modal_icon" id="iconmodal" tabindex="-1" role="dialog" aria-labelledby="iconmodal" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title"><i class="fas fa-info-circle"></i> Cancel Extension Request</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">            </div>            <div class="modal-footer">                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>            </div>        </div>    </div></div><!-- Modal Expanded --><div class="modal fade modal_expanded" id="expandedmodal" tabindex="-1" role="dialog" aria-labelledby="expandedmodal" aria-hidden="true">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Comment By - Name of user</h5>                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    <span aria-hidden="true">&times;</span>                </button>            </div>            <div class="modal-body">                <textarea>Etiam non fermentum justo. Praesent ex turpis, lacinia cursus erat vel, dictum iaculis augue. Vestibulum et bibendum eros, sit amet bibendum metus. Duis suscipit quam eu maximus auctor. Nunc condimentum eu magna eu elementum. Praesent iaculis ultrices tortor et ullamcorper. Praesent arcu quam, maximus quis nunc nec, dignissim convallis quam. Nunc id commodo nisi. Curabitur imperdiet vehicula dui sodales facilisis. Aliquam ac consectetur arcu. Nullam vel nunc lacus. Mauris consectetur luctus accumsan. Aliquam pellentesque, ante a sagittis interdum, lorem nisi iaculis arcu, ut vestibulum augue sapien nec ante. Nunc vel tempus dolor. Etiam pharetra elementum ipsum, iaculis vulputate nulla auctor vel. Vivamus ac ex molestie, pharetra nunc nec, venenatis metus. Fusce at nisl erat. Aenean id maximus libero. Nulla suscipit nec nisl eu dictum. Nunc at sem non urna fermentum laoreet. Pellentesque feugiat justo a neque pellentesque, eget imperdiet nisi suscipit. Fusce orci risus, convallis vitae condimentum ac, malesuada eget augue. Suspendisse ut molestie libero. Nam molestie rhoncus arcu at fermentum. Fusce euismod ullamcorper massa pharetra aliquet. Pellentesque eget urna quam. In in rutrum lorem, at viverra sem. Duis molestie rutrum augue id tristique. Morbi erat magna, pellentesque at ullamcorper dictum, feugiat id massa. Sed pretium elementum gravida. Duis porta lorem ac maximus feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam quis mollis ex. In non malesuada elit, sed feugiat dui. Nam facilisis nunc eu urna volutpat, a dictum quam ultrices</textarea>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'ApiDemoComponent', 'selector': 'bid-api-demo'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'ButtonsComponent', 'selector': 'bid-buttons'},{'name': 'CardsComponent', 'selector': 'bid-cards'},{'name': 'CirculationDistributedPageComponent', 'selector': 'bid-circulation-distributed-page'},{'name': 'CirculationPageComponent', 'selector': 'bid-circulation-page'},{'name': 'DistributionListPageComponent', 'selector': 'bid-distribution-list-page'},{'name': 'DocumentItemComponent', 'selector': 'bid-document-item'},{'name': 'DocumentViewerComponent', 'selector': 'bid-document-viewer'},{'name': 'EditFormComponent', 'selector': 'bid-edit-form'},{'name': 'ErrorHandlerComponent', 'selector': 'bid-error-handler'},{'name': 'FormsComponent', 'selector': 'bid-forms'},{'name': 'HeaderComponent', 'selector': 'bid-header'},{'name': 'HeadingsComponent', 'selector': 'bid-headings'},{'name': 'HomeComponent', 'selector': 'bid-home'},{'name': 'MainPageComponent', 'selector': 'bid-main-page'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalDialogComponent', 'selector': 'bid-modal-dialog'},{'name': 'ModalsComponent', 'selector': 'bid-modals'},{'name': 'OldStyleGuideComponent', 'selector': 'bid-old-style-guide'},{'name': 'OperationFiltersComponent', 'selector': 'bid-operation-filters'},{'name': 'OperationListComponent', 'selector': 'bid-operation-list'},{'name': 'PageNotFoundComponent', 'selector': 'bid-page-not-found'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'Step0Component', 'selector': 'bid-step0'},{'name': 'TablesComponent', 'selector': 'bid-tables'},{'name': 'TableViewerComponent', 'selector': 'bid-table-viewer'},{'name': 'UploadFilesComponent', 'selector': 'bid-upload-files'},{'name': 'UploadPackagePageComponent', 'selector': 'bid-upload-package-page'},{'name': 'VpcManagerPageComponent', 'selector': 'bid-vpc-manager-page'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ModalsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ModalsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

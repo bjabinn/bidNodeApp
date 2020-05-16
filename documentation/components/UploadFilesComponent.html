@@ -1,0 +1,1142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bid documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">bid documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>UploadFilesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+            <code>DialogContentBase</code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterContentChecked" target="_blank" >AfterContentChecked</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>bid-upload-files</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./upload-files.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isMultiple">isMultiple</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#myFiles">myFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#newContent">newContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#nextContent">nextContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#prevContent">prevContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submitted">submitted</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#uploadForm">uploadForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#uploads$">uploads$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getProgress">getProgress</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterContentChecked">ngAfterContentChecked</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#onCancelAction">onCancelAction</a>
+                            </li>
+                            <li>
+                                <a href="#save">save</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#documentRestriction">documentRestriction</a>
+                            </li>
+                            <li>
+                                <a href="#limit">limit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: DialogRef, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, blobState: <a href="../injectables/BlobUploadsViewStateService.html">BlobUploadsViewStateService</a>, temporaDocService: <a href="../injectables/TemporalDocumentService.html">TemporalDocumentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>DialogRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>blobState</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BlobUploadsViewStateService.html" target="_self" >BlobUploadsViewStateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>temporaDocService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TemporalDocumentService.html" target="_self" >TemporalDocumentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="documentRestriction"></a>
+                        <b>documentRestriction</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FileRestrictions</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="limit"></a>
+                        <b>limit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:23</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProgress"></a>
+                    <span class="name">
+                        <b>
+                            getProgress
+                        </b>
+                        <a href="#getProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProgress(progress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>progress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterContentChecked"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterContentChecked
+                        </b>
+                        <a href="#ngAfterContentChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterContentChecked()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancelAction"></a>
+                    <span class="name">
+                        <b>
+                            onCancelAction
+                        </b>
+                        <a href="#onCancelAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancelAction()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="save"></a>
+                    <span class="name">
+                        <b>
+                            save
+                        </b>
+                        <a href="#save"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>save(files: FileList, valid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>files</td>
+                                    <td>
+                                            <code>FileList</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>valid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DialogRef</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isMultiple"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            isMultiple</b>
+                            <a href="#isMultiple"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="myFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            myFiles</b>
+                            <a href="#myFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newContent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            newContent</b>
+                            <a href="#newContent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nextContent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            nextContent</b>
+                            <a href="#nextContent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="prevContent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            prevContent</b>
+                            <a href="#prevContent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitted"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            submitted</b>
+                            <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription</b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            uploadForm</b>
+                            <a href="#uploadForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploads$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            uploads$</b>
+                            <a href="#uploads$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;BlobItemUpload[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/preparation-process/src/app/shared/components/upload-package/components/upload-files/upload-files.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    Input,
+    AfterContentChecked,
+    OnDestroy
+} from &#x27;@angular/core&#x27;;
+import { DialogRef, DialogContentBase } from &#x27;@progress/kendo-angular-dialog&#x27;;
+import { FileRestrictions } from &#x27;@progress/kendo-angular-upload&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import {
+    BlobUploadsViewStateService,
+    BlobItemUpload
+} from &#x27;@bid/bid-api-service&#x27;;
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
+import { TemporalDocumentService } from &#x27;@bid/bid-api-service&#x27;;
+
+@Component({
+    selector: &#x27;bid-upload-files&#x27;,
+    templateUrl: &#x27;./upload-files.component.html&#x27;
+})
+export class UploadFilesComponent extends DialogContentBase
+    implements AfterContentChecked, OnDestroy {
+    @Input() limit: number;
+    @Input() documentRestriction: FileRestrictions;
+
+    public uploads$: Observable&lt;BlobItemUpload[]&gt;;
+    public uploadForm: FormGroup;
+    public myFiles: Array&lt;any&gt;;
+    public submitted &#x3D; false;
+    public isMultiple: boolean;
+    public prevContent: string;
+    public newContent: string;
+    public nextContent: string;
+
+    private subscription: Subscription;
+
+    constructor(
+        public dialog: DialogRef,
+        private fb: FormBuilder,
+        private blobState: BlobUploadsViewStateService,
+        private temporaDocService: TemporalDocumentService
+    ) {
+        super(dialog);
+        this.uploadForm &#x3D; this.fb.group({
+            files: [this.myFiles, [Validators.required]]
+        });
+
+        this.uploads$ &#x3D; this.blobState.uploadedItems$;
+        this.subscription &#x3D; this.uploads$.subscribe();
+        this.prevContent &#x3D; &#x27;Drag an drop a file here or &#x27;;
+        this.newContent &#x3D; &#x27;Choose files&#x27;;
+        this.nextContent &#x3D; &#x27; from your computer.&#x27;;
+    }
+
+    ngAfterContentChecked() {
+        this.limit &gt; 1 ? (this.isMultiple &#x3D; true) : (this.isMultiple &#x3D; false);
+    }
+    onCancelAction() {
+        this.dialog.close(false);
+    }
+    save(files: FileList, valid: boolean) {
+        this.submitted &#x3D; true;
+        if (valid) {
+            this.blobState.uploadItems(files);
+            this.temporaDocService.addTemporalDocumentToCollection(files);
+            this.dialog.close(true);
+        }
+    }
+
+    getProgress(progress: number): boolean {
+        return progress &#x3D;&#x3D;&#x3D; 100 ? true : false;
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;form
+    [formGroup]&#x3D;&quot;uploadForm&quot;
+    novalidate
+    (ngSubmit)&#x3D;&quot;save(uploadForm.get(&#x27;files&#x27;).value, uploadForm.valid)&quot;
+&gt;
+    &lt;ng-container *ngFor&#x3D;&quot;let upload of uploads$ | async&quot;&gt;&lt;/ng-container&gt;
+    &lt;kendo-fileselect
+        formControlName&#x3D;&quot;files&quot;
+        [multiple]&#x3D;&quot;isMultiple&quot;
+        [restrictions]&#x3D;&quot;documentRestriction&quot;
+        class&#x3D;&quot;k-upload--document&quot;
+        style&#x3D;&quot;--before-content: &#x27;{{ prevContent }}&#x27;;--new-content: &#x27;{{
+            newContent
+        }}&#x27;;--after-content: &#x27;{{ nextContent }}&#x27;;--ext-content: &#x27;{{
+            documentRestriction?.allowedExtensions
+        }}&#x27;;&quot;
+    &gt;
+        &lt;kendo-upload-messages
+            [dropFilesHere]&#x3D;&quot;&#x27;The file extensions types that are allowed are: &#x27;&quot;
+        &gt;
+        &lt;/kendo-upload-messages&gt;
+    &lt;/kendo-fileselect&gt;
+    &lt;div class&#x3D;&quot;modal__footer&quot;&gt;
+        &lt;button kendoButton (click)&#x3D;&quot;onCancelAction()&quot; class&#x3D;&quot;btn btn-link&quot;&gt;
+            Cancel
+        &lt;/button&gt;
+        &lt;button
+            kendoButton
+            [disabled]&#x3D;&quot;!uploadForm.valid&quot;
+            type&#x3D;&quot;submit&quot;
+            primary&#x3D;&quot;true&quot;
+        &gt;
+            Upload Document
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><form    [formGroup]="uploadForm"    novalidate    (ngSubmit)="save(uploadForm.get(\'files\').value, uploadForm.valid)">    <ng-container *ngFor="let upload of uploads$ | async"></ng-container>    <kendo-fileselect        formControlName="files"        [multiple]="isMultiple"        [restrictions]="documentRestriction"        class="k-upload--document"        style="--before-content: \'{{ prevContent }}\';--new-content: \'{{            newContent        }}\';--after-content: \'{{ nextContent }}\';--ext-content: \'{{            documentRestriction?.allowedExtensions        }}\';"    >        <kendo-upload-messages            [dropFilesHere]="\'The file extensions types that are allowed are: \'"        >        </kendo-upload-messages>    </kendo-fileselect>    <div class="modal__footer">        <button kendoButton (click)="onCancelAction()" class="btn btn-link">            Cancel        </button>        <button            kendoButton            [disabled]="!uploadForm.valid"            type="submit"            primary="true"        >            Upload Document        </button>    </div></form></div>'
+    var COMPONENTS = [{'name': 'ApiDemoComponent', 'selector': 'bid-api-demo'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'ButtonsComponent', 'selector': 'bid-buttons'},{'name': 'CardsComponent', 'selector': 'bid-cards'},{'name': 'CirculationDistributedPageComponent', 'selector': 'bid-circulation-distributed-page'},{'name': 'CirculationPageComponent', 'selector': 'bid-circulation-page'},{'name': 'DistributionListPageComponent', 'selector': 'bid-distribution-list-page'},{'name': 'DocumentItemComponent', 'selector': 'bid-document-item'},{'name': 'DocumentViewerComponent', 'selector': 'bid-document-viewer'},{'name': 'EditFormComponent', 'selector': 'bid-edit-form'},{'name': 'ErrorHandlerComponent', 'selector': 'bid-error-handler'},{'name': 'FormsComponent', 'selector': 'bid-forms'},{'name': 'HeaderComponent', 'selector': 'bid-header'},{'name': 'HeadingsComponent', 'selector': 'bid-headings'},{'name': 'HomeComponent', 'selector': 'bid-home'},{'name': 'MainPageComponent', 'selector': 'bid-main-page'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalDialogComponent', 'selector': 'bid-modal-dialog'},{'name': 'ModalsComponent', 'selector': 'bid-modals'},{'name': 'OldStyleGuideComponent', 'selector': 'bid-old-style-guide'},{'name': 'OperationFiltersComponent', 'selector': 'bid-operation-filters'},{'name': 'OperationListComponent', 'selector': 'bid-operation-list'},{'name': 'PageNotFoundComponent', 'selector': 'bid-page-not-found'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'Step0Component', 'selector': 'bid-step0'},{'name': 'TablesComponent', 'selector': 'bid-tables'},{'name': 'TableViewerComponent', 'selector': 'bid-table-viewer'},{'name': 'UploadFilesComponent', 'selector': 'bid-upload-files'},{'name': 'UploadPackagePageComponent', 'selector': 'bid-upload-package-page'},{'name': 'VpcManagerPageComponent', 'selector': 'bid-vpc-manager-page'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UploadFilesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UploadFilesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

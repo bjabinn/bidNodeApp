@@ -1,0 +1,53 @@
+{
+    "npmScope": "bid",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
+    },
+    "projects": {
+        "showcase": {
+            "tags": []
+        },
+        "showcase-e2e": {
+            "tags": [],
+            "implicitDependencies": ["showcase"]
+        },
+        "bid-ui": {
+            "tags": []
+        },
+        "bid-security": {
+            "tags": []
+        },
+        "bid-translate": {
+            "tags": []
+        },
+        "bid-api-service": {
+            "tags": []
+        },
+        "bid-utils": {
+            "tags": []
+        },
+        "bid-assets": {
+            "tags": []
+        },
+        "bid-handle-errors": {
+            "tags": []
+        },
+        "preparation-process": {
+            "tags": []
+        },
+        "preparation-process-e2e": {
+            "tags": [],
+            "implicitDependencies": ["preparation-process"]
+        },
+        "pocnest-middleware": {
+            "tags": []
+        }
+    }
+}

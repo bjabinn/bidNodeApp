@@ -1,0 +1,178 @@
+///*-------------------------------------------------------------------------
+//   # FRONT MODULES CONFIG
+//--------------------------------------------------------------------------*/
+//	CONTENT THIS FILE:
+//		# IMPORT FILE CONFIG SCSS
+//      # SETTINGS
+//		# TOOLS
+//      # GENERIC
+//		# BASE
+//		# OBJETCS
+//      # COMPONENTS
+//      # TRUMPS
+//*--------------------------------------------------------
+//    # SETTINGS
+//----------------------------------------------------------*/
+
+// Boostrap functions & settings
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+@import '00-settings/_settings__basics';
+@import '00-settings/_settings__colors';
+@import '00-settings/_settings__responsive';
+@import '00-settings/_settings__headings';
+// @import '00-settings/_settings__grid-reflex';
+@import '00-settings/_settings__objects';
+@import '00-settings/_settings__trumps';
+
+//*----------------------------------------------------------
+//    # TOOLS
+//----------------------------------------------------------*/
+@import '../../../../node_modules/bootstrap/scss/mixins';
+@import '01-tools/_tools__border-radius';
+// @import '01-tools/_tools__box-shadow';
+// @import '01-tools/_tools__fonts';
+@import '01-tools/_tools__colors';
+@import '01-tools/_tools__pixel-to-em';
+@import '01-tools/_tools__pixel-to-rem';
+@import '01-tools/_tools__responsive';
+@import '01-tools/_tools__transform';
+@import '01-tools/_tools__transition';
+@import '01-tools/_tools__truncate';
+@import '01-tools/_tools__separations';
+@import '01-tools/_tools__user-select';
+@import '01-tools/_tools__z-index';
+//*----------------------------------------------------------
+//     # GENERIC
+// ----------------------------------------------------------*/
+@import '../../../../node_modules/bootstrap/scss/grid';
+// Import files grid reflex
+// @import '02-generic/reflex/_mixins';
+// @import '02-generic/reflex/_grid';
+// @import '02-generic/reflex/_helpers';
+// End import files grid reflex
+// @import "02-generic/_generic__reset";
+// @import "02-generic/_generic__box-sizing";
+@import '02-generic/_generic__fonts';
+@import '02-generic/_generic__accessible';
+@import '../../../../node_modules/bootstrap/scss/root';
+@import '../../../../node_modules/bootstrap/scss/reboot';
+//*----------------------------------------------------------
+//     # BASE
+// ----------------------------------------------------------*/
+@import '../../../../node_modules/bootstrap/scss/type';
+@import '../../../../node_modules/bootstrap/scss/images';
+@import '../../../../node_modules/bootstrap/scss/code';
+@import '../../../../node_modules/bootstrap/scss/tables';
+@import '../../../../node_modules/bootstrap/scss/forms';
+// @import "../../../../node_modules/bootstrap/scss/buttons";
+@import '03-elements/_elements__html';
+@import '03-elements/_elements__body';
+@import '03-elements/_elements__button';
+@import '03-elements/_elements__headings';
+@import '03-elements/_elements__image';
+@import '03-elements/_elements__a';
+@import '03-elements/elements__txt';
+// @import '03-elements/_elements__lists';
+// @import '03-elements/_elements__scrollbar';
+// /*----------------------------------------------------------
+//     # OBJECTS
+// ----------------------------------------------------------*/
+// @import '04-objects/_objects__alert';
+// @import '04-objects/_objects__breadcrumb';
+// @import '04-objects/_objects__btn';
+// @import '04-objects/_objects__card';
+// @import '04-objects/_objects__checkbox';
+// @import '04-objects/_objects__form-control';
+// @import '04-objects/_objects__input';
+// @import '04-objects/_objects__radio';
+// @import '04-objects/_objects__select';
+// @import '04-objects/_objects__table';
+// @import '04-objects/_objects__title';
+// @import '04-objects/_objects__txt';
+
+// /*----------------------------------------------------------
+//     # COMPONENTS
+// ----------------------------------------------------------*/
+
+// /*----------------------------------------------------------
+//     # COMPONENTS BOOTSTRAP
+// ----------------------------------------------------------*/
+
+@import '../../../../node_modules/bootstrap/scss/dropdown';
+@import '../../../../node_modules/bootstrap/scss/button-group';
+@import '../../../../node_modules/bootstrap/scss/input-group';
+@import '../../../../node_modules/bootstrap/scss/nav';
+@import '../../../../node_modules/bootstrap/scss/navbar';
+// @import "../../../../node_modules/bootstrap/scss/card";
+// @import "../../../../node_modules/bootstrap/scss/transitions";
+// @import "../../../../node_modules/bootstrap/scss/custom-forms";
+// @import "../../../../node_modules/bootstrap/scss/breadcrumb";
+// @import "../../../../node_modules/bootstrap/scss/pagination";
+// @import "../../../../node_modules/bootstrap/scss/badge";
+// @import "../../../../node_modules/bootstrap/scss/jumbotron";
+// @import "../../../../node_modules/bootstrap/scss/alert";
+// @import "../../../../node_modules/bootstrap/scss/progress";
+// @import "../../../../node_modules/bootstrap/scss/media";
+// @import "../../../../node_modules/bootstrap/scss/list-group";
+// @import "../../../../node_modules/bootstrap/scss/close";
+// @import "../../../../node_modules/bootstrap/scss/toasts";
+// @import "../../../../node_modules/bootstrap/scss/modal";
+// @import "../../../../node_modules/bootstrap/scss/tooltip";
+// @import "../../../../node_modules/bootstrap/scss/popover";
+// @import "../../../../node_modules/bootstrap/scss/carousel";
+// @import "../../../../node_modules/bootstrap/scss/spinners";
+
+// @import '05-components/_components__example.scss';
+@import '05-components/_components__sprites';
+@import '05-components/_components__textbox';
+@import '05-components/_components__datepicker';
+@import '05-components/_components__checkbox';
+@import '05-components/_components__circulation-info';
+@import '05-components/_components__table';
+@import '05-components/components__textarea';
+@import '05-components/components__face2face';
+@import '05-components/components__howtolink';
+@import '05-components/components__timepicker';
+@import '05-components/components__tooltip';
+@import '05-components/components__timeline';
+@import '05-components/components__message.scss';
+
+// /*----------------------------------------------------------
+//     # COMPONENTS REPOSITORY
+// ----------------------------------------------------------*/
+@import '05-components/repository/_components__box.scss';
+@import '05-components/repository/_components__card-document.scss';
+@import '05-components/repository/_components__grid.scss';
+@import '05-components/repository/_components__repository.scss';
+@import '05-components/repository/_components__sidebar.scss';
+@import '05-components/repository/_components__header.scss';
+@import '05-components/repository/_components__not-found';
+@import '05-components/repository/_components__action-footer';
+
+// /*----------------------------------------------------------
+//     # COMPONENTS KENDO UI
+// ----------------------------------------------------------*/
+@import '05-components/kendo/kendo-notifications';
+@import '05-components/kendo/kendo-panelbar';
+@import '05-components/kendo/kendo-dialog';
+@import '05-components/kendo/kendo-drawer';
+@import '05-components/kendo/kendo-card';
+@import '05-components/kendo/kendo-popup';
+@import '05-components/kendo/kendo-upload';
+@import '05-components/kendo/kendo-grid';
+@import '05-components/kendo/kendo-multiselect';
+@import '05-components/kendo/kendo-switch';
+
+//*----------------------------------------------------------
+//     # TRUMPS
+// ----------------------------------------------------------*/
+@import '../../../../node_modules/bootstrap/scss/utilities';
+@import '../../../../node_modules/bootstrap/scss/print';
+@import '06-trumps/_trumps__colors';
+@import '06-trumps/_trumps__display';
+@import '06-trumps/_trumps__padding';
+@import '06-trumps/_trumps__z-index';
+@import '06-trumps/_trumps__separations';
+@import '06-trumps/_trumps__text-align';

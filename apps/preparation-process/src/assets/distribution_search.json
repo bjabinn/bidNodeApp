@@ -1,0 +1,74 @@
+[
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf14",
+        "memberId": "Sergio Canalejo",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf16",
+        "memberId": "Emilio Canalejo",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf17",
+        "memberId": "Yolanda Canalejo",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf18",
+        "memberId": "Yolanda Ruiz",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf19",
+        "memberId": "Sergio Ruiz",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf10",
+        "memberId": "Emilio Jose Arce",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf11",
+        "memberId": "Manuel Jose Arce",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf12",
+        "memberId": "Emilio Maria Arce",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    },
+    {
+        "id": "a100bd73-ee5a-450e-9536-5c46404cbf13",
+        "memberId": "Manuel Maria Fernandez",
+        "accountType": "Area",
+        "addedBy": "added by mock",
+        "addedDate": "2020-03-31T17:32",
+        "type": "AddedByUser"
+    }
+]

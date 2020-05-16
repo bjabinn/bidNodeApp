@@ -1,0 +1,83 @@
+////
+/// INPUT TEXT component
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group Component
+/// @name .#{$ns}textbox
+/// @since version 1.0.0
+////
+.#{$ns}textbox {
+
+    position: relative;
+
+    .k-textbox {
+        border-radius: rem(5);
+        position: relative;
+        font-style: italic;
+        font-size: rem(16);
+    }
+
+    &__icon {
+        color: color('primary');
+        position: absolute;
+        top: 50%;
+        right: rem(8);
+        transform: translateY(-50%);
+        &::after {
+            font-family: 'Font Awesome 5 Pro';
+            content: '\f002';
+            font-weight: 900;
+            font-size: rem(16);
+        }
+    }
+
+    &--rooms {
+        .bid-textbox {
+            &__label {
+                display: block;
+                color: color('black');
+            }
+            &__input-container {
+                position: relative;
+                display: inline-block;
+            }
+            &__icon {
+                font-size: rem(18);
+                right: rem(13);
+                color: color('black');
+                &::after {
+                    content: none;
+                }
+            }
+            &__hint {
+                font-size: rem(12);
+                font-style: italic;
+                color: color('primary');
+                display: block;
+            }
+        }
+        .k-textbox {
+            width: rem(445);
+            display: block;
+            font-style: normal;
+            font-weight: bold;
+            color: color('black');
+            padding-right: rem(38);
+
+            &::placeholder {
+                font-weight: normal;
+                font-style: italic;
+            }
+
+            &:focus,
+            &:active {
+                border-color: color('primary-light');
+
+                & + .bid-textbox__icon {
+                    color: color('primary');
+                }
+            }
+        }
+    }
+}

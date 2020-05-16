@@ -1,0 +1,31 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": "./",
+        "paths": {
+            "@bid/bid-ui": ["libs/bid-ui/src/index.ts"],
+            "@bid/bid-security": ["libs/bid-security/src/index.ts"],
+            "@bid/bid-translate": ["libs/bid-translate/src/index.ts"],
+            "@bid/bid-api-service": ["libs/bid-api-service/src/index.ts"],
+            "@bid/bid-utils": ["libs/bid-utils/src/index.ts"],
+            "@bid/bid-assets": ["libs/bid-assets/src/index.ts"],
+            "@bid/bid-handle-errors": ["libs/bid-handle-errors/src/index.ts"],
+            "@bid/pp/*": ["apps/preparation-process/src/*"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
+}

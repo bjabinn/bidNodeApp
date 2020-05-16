@@ -1,0 +1,7 @@
+<bid-modal-confirm
+    [opened]="initialProcess"
+    [title]="'PPR_STEPZERO_TITLE' | translate"
+    [confirm]="confirmButton | translate"
+    [hasTemplate]="hasTemplate"
+    (closed)="startProcess(hasTemplate)"
+></bid-modal-confirm>

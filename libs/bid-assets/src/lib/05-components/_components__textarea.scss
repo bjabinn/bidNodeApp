@@ -1,0 +1,51 @@
+////
+/// TEXTAREA component
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group Component
+/// @name .#{$ns}textarea
+/// @since version 1.0.0
+////
+.#{$ns}textarea {
+    margin-bottom: rem(24);
+
+    &__label {
+        display: inline-block;
+        font-size: rem(14);
+        color: color('black');
+        margin-bottom: rem(5);
+    }
+
+    &__input {
+        color: color('black');
+        width: 100%;
+        min-height: rem(156);
+        font-size: rem(14);
+        font-style: italic;
+        border-radius: rem(5);
+    }
+
+    &__hint {
+        display: none;
+    }
+
+    //
+    //MODIFIERS
+    //
+    &--error {
+        .bid-textarea__input {
+            border-color: color('danger');
+
+            &:hover {
+                border-color: color('danger');
+            }
+        }
+        .bid-textarea__hint {
+            display: inline-block;
+            font-size: rem(12);
+            font-style: italic;
+            color: color('danger');
+        }
+    }
+}

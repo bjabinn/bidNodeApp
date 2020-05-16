@@ -1,0 +1,92 @@
+////
+/// Override kendo-upload component
+///
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group components of kendo ui
+/// @name .k-upload
+/// @since version 1.0.0
+////
+.k-upload {
+    &--document {
+        border: rem(2) dashed color('tertiary');
+        border-radius: rem(8);
+
+        .k-dropzone {
+            background-color: transparent;
+            height: rem(321);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .k-upload-button {
+                background-image: none;
+                max-width: rem(345);
+                white-space: normal;
+                font-weight: bold;
+                border: none;
+                font-size: rem(18);
+                line-height: rem(25);
+
+                &:hover,
+                &.hover,
+                &:active,
+                &.active,
+                &:focus,
+                &.focus {
+                    background-color: transparent;
+                    border: none;
+                    box-shadow: none;
+                }
+                span {
+                    text-decoration: underline;
+                    font-size: 0;
+                    &:before {
+                        content: var(--new-content);
+                        font-size: rem(16);
+                    }
+                }
+                &:before {
+                    content: var(--before-content);
+                    display: inline;
+                    color: black;
+                    font-size: rem(18);
+                    background: none;
+                    opacity: 1;
+                    font-weight: normal;
+                    position: static;
+                }
+                &:after {
+                    content: var(--after-content);
+                    display: inline;
+                    color: black;
+                    font-size: rem(18);
+                    background: none;
+                    opacity: 1;
+                    font-weight: normal;
+                    position: static;
+                }
+            }
+            .k-dropzone-hint {
+                font-size: rem(14);
+                font-style: italic;
+                color: grey;
+                display: block;
+                visibility: visible;
+                opacity: 1;
+                position: absolute;
+                bottom: 0;
+                max-width: rem(299);
+                margin: 0;
+                padding: rem(20) 0;
+                white-space: normal;
+                text-align: center;
+                &:after {
+                    content: var(--ext-content);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

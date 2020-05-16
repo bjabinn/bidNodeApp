@@ -1,0 +1,787 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bid documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">bid documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SelectLanguageComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>apps/showcase/src/app/example-pages/select-language/select-language.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>bid-select-language</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./select-language.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#languages">languages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#opened">opened</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedLanguage">selectedLanguage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#close">close</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open">open</a>
+                            </li>
+                            <li>
+                                <a href="#selectLanguage">selectLanguage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <b>
+                            close
+                        </b>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close(message?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <b>
+                            open
+                        </b>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectLanguage"></a>
+                    <span class="name">
+                        <b>
+                            selectLanguage
+                        </b>
+                        <a href="#selectLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectLanguage(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>, message: <a href="../interfaces/Language.html">Language</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Language.html" target="_self" >Language</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="languages"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            languages</b>
+                            <a href="#languages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Language.html" target="_self" >Language[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="opened"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            opened</b>
+                            <a href="#opened"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedLanguage"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectedLanguage</b>
+                            <a href="#selectedLanguage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">apps/showcase/src/app/example-pages/select-language/select-language.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+interface Language {
+    code: string,
+    title: string,
+    language: string
+}
+@Component({
+    selector: &#x27;bid-select-language&#x27;,
+    templateUrl: &#x27;./select-language.component.html&#x27;
+})
+export class SelectLanguageComponent implements OnInit {
+    public opened: boolean;
+    public selectedLanguage: string;
+    public languages: Language[];
+    constructor() {
+        this.close();
+        this.languages &#x3D; [
+            {
+                code: &#x27;ESP&#x27;,
+                title: &#x27;Spanish&#x27;,
+                language: &#x27;ESPANISH&#x27;
+            },
+            {
+                code: &#x27;ENG&#x27;,
+                title: &#x27;English&#x27;,
+                language: &#x27;ENGLISH&#x27;
+            },
+            {
+                code: &#x27;POR&#x27;,
+                title: &#x27;Portuguese&#x27;,
+                language: &#x27;PORTUGUESE&#x27;
+            },
+            {
+                code: &#x27;FRA&#x27;,
+                title: &#x27;French&#x27;,
+                language: &#x27;FRENCH&#x27;
+            }
+        ]
+    }
+
+    ngOnInit(): void {
+    }
+    close(message?: string) {
+        this.opened &#x3D; false;
+        message &amp;&amp; console.log(message);
+    }
+    open() {
+        this.opened &#x3D; true;
+    }
+    selectLanguage(event: Event, message: Language ) {
+        event.preventDefault();
+        this.selectedLanguage &#x3D; message.language;
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- COMPONENT HEADING PROCESS  --&gt;
+&lt;section class&#x3D;&quot;container-fluid&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-8&quot;&gt;
+            &lt;div class&#x3D;&quot;t-padding-top-xxxlarge t-padding-bottom-small&quot;&gt;
+                &lt;h1 class&#x3D;&quot;h1&quot;&gt;PP Select Language&lt;/h1&gt;
+                &lt;p&gt;The Project Team members must select the language for the package. The language can be edited until the
+                    Profile Package document is uploaded.&lt;/p&gt;
+                &lt;a href&#x3D;&quot;#&quot; alt&#x3D;&quot;&quot;&gt;
+                    &lt;span class&#x3D;&quot;far fa-lightbulb pr-2&quot;&gt;&lt;/span&gt;
+                    &lt;span class&#x3D;&quot;txt--small font-weight-bold d-inline-block&quot;&gt;HOW-TO LINK&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- COMPONENT HEADING PROCESS  --&gt;
+&lt;!-- DISTRIBUTION LIST --&gt;
+&lt;section class&#x3D;&quot;container-fluid&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+                &lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; disabled&gt;Distribution List&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- DISTRIBUTION LIST --&gt;
+&lt;!-- SECTION LANGUAGE SELECTION  --&gt;
+&lt;section class&#x3D;&quot;container-fluid&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12&quot;&gt;
+            &lt;div class&#x3D;&quot;panelbar-wrapper&quot;&gt;
+                &lt;kendo-panelbar&gt;
+                    &lt;kendo-panelbar-item [title]&#x3D;&quot;&#x27;DOCUMENTS LANGUAGE SELECTION&#x27;&quot; expanded&#x3D;&quot;true&quot;&gt;
+                        &lt;ng-template kendoPanelBarContent&gt;
+                            &lt;div&gt;
+                                &lt;div class&#x3D;&quot;row&quot;&gt;
+                                    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+                                        &lt;p class&#x3D;&quot;mb-5&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor &lt;strong class&#x3D;&quot;font-weight-bold&quot;&gt;incididunt ut labore et dolore
+                                                magna aliqua. Adipiscing vitae proin sagittis nisl rhoncus
+                                                mattis.&lt;/strong&gt;&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;col-12&quot;&gt;
+                                        &lt;span class&#x3D;&quot;txt txt--small txt--gray&quot;&gt;Select 1 language&lt;/span&gt;
+                                        &lt;div class&#x3D;&quot;d-flex my-3&quot;&gt;
+                                            &lt;kendo-buttongroup selection&#x3D;&quot;single&quot; class&#x3D;&quot;mb-5&quot;&gt;
+                                                &lt;button kendoButton class&#x3D;&quot;text-center t-margin-right-outsize&quot;
+                                                    style&#x3D;&quot;position: relative;&quot; [toggleable]&#x3D;&quot;true&quot;
+                                                    *ngFor&#x3D;&quot;let lang of languages&quot;
+                                                    (click)&#x3D;&quot;selectLanguage($event, lang)&quot;&gt;{{lang.code}}
+                                                    &lt;span class&#x3D;&quot;text-body font-weight-normal&quot;
+                                                        style&#x3D;&quot;display: block; position: absolute; top: 3rem; left: 50%; transform: translateX(-50%);&quot;&gt;{{lang.title}}&lt;/span&gt;
+                                                &lt;/button&gt;
+                                            &lt;/kendo-buttongroup&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/ng-template&gt;
+                    &lt;/kendo-panelbar-item&gt;
+                &lt;/kendo-panelbar&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- SECTION LANGUAGE SELECTION  --&gt;
+&lt;!-- COMPONENT FOOTER ACTIONS  --&gt;
+&lt;footer class&#x3D;&quot;bid-actions-footer&quot;&gt;
+    &lt;div class&#x3D;&quot;bid-actions-footer__wrapper&quot;&gt;
+        &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+                        &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;open()&quot;&gt;Confirm language&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;!-- COMPONENT FOOTER ACTIONS  --&gt;
+
+&lt;!-- KENDO MODAL  --&gt;
+&lt;kendo-dialog title&#x3D;&quot;Confirm Language Selection&quot; *ngIf&#x3D;&quot;opened&quot; (close)&#x3D;&quot;close(&#x27;cancel&#x27;)&quot; [minWidth]&#x3D;&quot;250&quot;
+    [width]&#x3D;&quot;840&quot; [minHeight]&#x3D;&quot;340&quot;&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;selectedLanguage&quot;&gt;
+        &lt;p&gt;You&#x27;ve chosen {{selectedLanguage}} as Product Profile Package Language, once you upload the Package Document
+            the
+            language cannot be edited.&lt;/p&gt;
+        &lt;p&gt;This action cannot be undone. Would you want to continue?&lt;/p&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;!selectedLanguage&quot;&gt;
+        &lt;p&gt;You must select any language for continue.&lt;/p&gt;
+    &lt;/ng-container&gt;
+    &lt;kendo-dialog-actions layout&#x3D;&quot;normal&quot;&gt;
+        &lt;button kendoButton (click)&#x3D;&quot;close(&#x27;no&#x27;)&quot; class&#x3D;&quot;btn btn-link&quot;&gt;Cancel&lt;/button&gt;
+        &lt;button kendoButton (click)&#x3D;&quot;close(&#x27;yes&#x27;)&quot; primary&#x3D;&quot;true&quot; *ngIf&#x3D;&quot;selectedLanguage&quot;&gt;Yes, Confirm&lt;/button&gt;
+    &lt;/kendo-dialog-actions&gt;
+&lt;/kendo-dialog&gt;
+&lt;!-- KENDO MODAL  --&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- COMPONENT HEADING PROCESS  --><section class="container-fluid">    <div class="row">        <div class="col-8">            <div class="t-padding-top-xxxlarge t-padding-bottom-small">                <h1 class="h1">PP Select Language</h1>                <p>The Project Team members must select the language for the package. The language can be edited until the                    Profile Package document is uploaded.</p>                <a href="#" alt="">                    <span class="far fa-lightbulb pr-2"></span>                    <span class="txt--small font-weight-bold d-inline-block">HOW-TO LINK</span>                </a>            </div>        </div>    </div></section><!-- COMPONENT HEADING PROCESS  --><!-- DISTRIBUTION LIST --><section class="container-fluid">    <div class="row">        <div class="col-12">            <div class="d-flex justify-content-end">                <button class="btn btn-sm btn-primary" disabled>Distribution List</button>            </div>        </div>    </div></section><!-- DISTRIBUTION LIST --><!-- SECTION LANGUAGE SELECTION  --><section class="container-fluid">    <div class="row">        <div class="col-12">            <div class="panelbar-wrapper">                <kendo-panelbar>                    <kendo-panelbar-item [title]="\'DOCUMENTS LANGUAGE SELECTION\'" expanded="true">                        <ng-template kendoPanelBarContent>                            <div>                                <div class="row">                                    <div class="col-8">                                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod                                            tempor <strong class="font-weight-bold">incididunt ut labore et dolore                                                magna aliqua. Adipiscing vitae proin sagittis nisl rhoncus                                                mattis.</strong></p>                                    </div>                                    <div class="col-12">                                        <span class="txt txt--small txt--gray">Select 1 language</span>                                        <div class="d-flex my-3">                                            <kendo-buttongroup selection="single" class="mb-5">                                                <button kendoButton class="text-center t-margin-right-outsize"                                                    style="position: relative;" [toggleable]="true"                                                    *ngFor="let lang of languages"                                                    (click)="selectLanguage($event, lang)">{{lang.code}}                                                    <span class="text-body font-weight-normal"                                                        style="display: block; position: absolute; top: 3rem; left: 50%; transform: translateX(-50%);">{{lang.title}}</span>                                                </button>                                            </kendo-buttongroup>                                        </div>                                    </div>                                </div>                            </div>                        </ng-template>                    </kendo-panelbar-item>                </kendo-panelbar>            </div>        </div>    </div></section><!-- SECTION LANGUAGE SELECTION  --><!-- COMPONENT FOOTER ACTIONS  --><footer class="bid-actions-footer">    <div class="bid-actions-footer__wrapper">        <div class="container-fluid">            <div class="row">                <div class="col-12">                    <div class="d-flex justify-content-end">                        <button class="btn btn-primary" (click)="open()">Confirm language</button>                    </div>                </div>            </div>        </div>    </div></footer><!-- COMPONENT FOOTER ACTIONS  --><!-- KENDO MODAL  --><kendo-dialog title="Confirm Language Selection" *ngIf="opened" (close)="close(\'cancel\')" [minWidth]="250"    [width]="840" [minHeight]="340">    <ng-container *ngIf="selectedLanguage">        <p>You\'ve chosen {{selectedLanguage}} as Product Profile Package Language, once you upload the Package Document            the            language cannot be edited.</p>        <p>This action cannot be undone. Would you want to continue?</p>    </ng-container>    <ng-container *ngIf="!selectedLanguage">        <p>You must select any language for continue.</p>    </ng-container>    <kendo-dialog-actions layout="normal">        <button kendoButton (click)="close(\'no\')" class="btn btn-link">Cancel</button>        <button kendoButton (click)="close(\'yes\')" primary="true" *ngIf="selectedLanguage">Yes, Confirm</button>    </kendo-dialog-actions></kendo-dialog><!-- KENDO MODAL  --></div>'
+    var COMPONENTS = [{'name': 'ApiDemoComponent', 'selector': 'bid-api-demo'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'AppComponent', 'selector': 'bid-root'},{'name': 'ButtonsComponent', 'selector': 'bid-buttons'},{'name': 'CardsComponent', 'selector': 'bid-cards'},{'name': 'CirculationDistributedPageComponent', 'selector': 'bid-circulation-distributed-page'},{'name': 'CirculationPageComponent', 'selector': 'bid-circulation-page'},{'name': 'DistributionListPageComponent', 'selector': 'bid-distribution-list-page'},{'name': 'DocumentItemComponent', 'selector': 'bid-document-item'},{'name': 'DocumentViewerComponent', 'selector': 'bid-document-viewer'},{'name': 'EditFormComponent', 'selector': 'bid-edit-form'},{'name': 'ErrorHandlerComponent', 'selector': 'bid-error-handler'},{'name': 'FormsComponent', 'selector': 'bid-forms'},{'name': 'HeaderComponent', 'selector': 'bid-header'},{'name': 'HeadingsComponent', 'selector': 'bid-headings'},{'name': 'HomeComponent', 'selector': 'bid-home'},{'name': 'MainPageComponent', 'selector': 'bid-main-page'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalConfirmComponent', 'selector': 'bid-modal-confirm'},{'name': 'ModalDialogComponent', 'selector': 'bid-modal-dialog'},{'name': 'ModalsComponent', 'selector': 'bid-modals'},{'name': 'OldStyleGuideComponent', 'selector': 'bid-old-style-guide'},{'name': 'OperationFiltersComponent', 'selector': 'bid-operation-filters'},{'name': 'OperationListComponent', 'selector': 'bid-operation-list'},{'name': 'PageNotFoundComponent', 'selector': 'bid-page-not-found'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'SelectLanguageComponent', 'selector': 'bid-select-language'},{'name': 'Step0Component', 'selector': 'bid-step0'},{'name': 'TablesComponent', 'selector': 'bid-tables'},{'name': 'TableViewerComponent', 'selector': 'bid-table-viewer'},{'name': 'UploadFilesComponent', 'selector': 'bid-upload-files'},{'name': 'UploadPackagePageComponent', 'selector': 'bid-upload-package-page'},{'name': 'VpcManagerPageComponent', 'selector': 'bid-vpc-manager-page'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SelectLanguageComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SelectLanguageComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

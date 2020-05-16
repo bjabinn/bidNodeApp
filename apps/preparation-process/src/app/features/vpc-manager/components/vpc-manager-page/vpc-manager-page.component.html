@@ -1,0 +1,63 @@
+<div #container>
+    <bid-header
+        [title]="'Submit to VPC Manager'"
+        [text]="
+            'Lorem Ipsum Generador. Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
+        "
+        [link]="'#'"
+    ></bid-header>
+    <bid-document-viewer
+        [documentCollection]="temporalDocuments$"
+        [documentRestriction]="documentRestriction"
+        [formatDate]="documentFormatDate"
+        [limit]="documentLimit"
+        [readonly]="readonly"
+    ></bid-document-viewer>
+    <!-- DISTRIBUTION LIST -->
+    <bid-distribution-list-section></bid-distribution-list-section>
+    <!-- DISTRIBUTION LIST -->
+    <bid-phase-history
+        [phaseData]="phaseData"
+        [addActive]="active"
+        (closed)="active = $event"
+    ></bid-phase-history>
+    <!-- COMPONENT FOOTER ACTIONS  -->
+    <footer class="bid-actions-footer">
+        <div class="bid-actions-footer__wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-end">
+                            <button
+                                class="btn btn-secondary t-margin-right-xxlarge"
+                                (click)="openedReturn = true"
+                            >
+                                {{ 'PPR_VPC_RETURN' | translate }}
+                            </button>
+                            <button
+                                class="btn btn-footer"
+                                (click)="opened = true"
+                            >
+                                {{ 'PPR_VPC_SUBMIT' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- COMPONENT FOOTER ACTIONS  -->
+<bid-modal-confirm
+    [opened]="openedReturn"
+    [title]="'Return to team'"
+    [confirm]="'Return to Team'"
+    (closed)="onCloseReturn($event)"
+    [return]="true"
+></bid-modal-confirm>
+<bid-modal-confirm
+    [opened]="opened"
+    [title]="'Submit to VPC Manager'"
+    [confirm]="'Submit'"
+    (closed)="onCloseConfirm($event.Submit)"
+></bid-modal-confirm>

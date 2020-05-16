@@ -1,0 +1,36 @@
+////
+/// TOOLTIP component
+///
+/// @access public
+/// @author Dfront Specialist Team
+/// @group Component
+/// @name .#{$ns}tooltip
+/// @since version 1.0.0
+////
+.#{$ns}tooltip {
+
+    .k-tooltip {
+        max-width: rem(456);
+        padding: rem(22) rem(44) rem(22) rem(20);
+        background-color: color('white');
+        color: color('black');
+        border-radius: rem(4);
+        border-left: rem(3) solid color('blue');
+    }
+    .k-callout {
+        color: color('white');
+    }
+    .k-tooltip-button {
+        top: rem(8);
+    }
+    .k-i-close {
+        color: color('gray-600');
+    }
+    .k-tooltip-content {
+        font-size: rem(14);
+        font-style: italic;
+        line-height: rem(19);
+        color: color('blue');
+        padding-right: 0;
+    }
+}

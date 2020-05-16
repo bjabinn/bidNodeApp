@@ -1,0 +1,22 @@
+<kendo-dialog
+    title="{{ 'PPR_DISTRIBUTIONDELETE_HEADER' | translate }}"
+    *ngIf="active"
+    (close)="close(false)"
+    [minWidth]="250"
+    [width]="840"
+    [minHeight]="340"
+>
+    <p>
+        {{ 'PPR_DISTRIBUTIONDELETE_BODY1' | translate }}
+        <strong class="font-weight-bold">{{ elementName }}</strong>
+        {{ 'PPR_DISTRIBUTIONDELETE_BODY2' | translate }}
+    </p>
+    <kendo-dialog-actions layout="normal">
+        <button kendoButton (click)="close(false)" class="btn btn-link">
+            {{ 'CANCEL' | translate }}
+        </button>
+        <button kendoButton (click)="close(true)" primary="true">
+            {{ 'PPR_DISTRIBUTIONDELETE_BTNDELETE' | translate }}
+        </button>
+    </kendo-dialog-actions>
+</kendo-dialog>
